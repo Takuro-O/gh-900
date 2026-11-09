@@ -351,6 +351,356 @@
    "topic": "ブランチ保護ルール",
    "volatile": true,
    "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ワークフローのジョブを、自社のデータセンターにあるサーバーなど、自分で管理するマシン上で実行したい。使うものはどれか。",
+   "choices": [
+    "GitHub-hosted runner",
+    "セルフホストランナー（self-hosted runner）",
+    "再利用可能なワークフロー（reusable workflow）",
+    "GitHub Codespaces"
+   ],
+   "answer": 1,
+   "explanation": "セルフホストランナーは、自分で用意・管理するマシンにランナーを登録して、ジョブを実行する仕組みである。GitHub-hosted runner は GitHub が管理する仮想マシンで、ユーザーのサーバーではない。再利用可能なワークフローはワークフローの共通化、Codespaces はクラウド上の開発環境であり、ジョブの実行先を選ぶ仕組みではない。",
+   "topic": "GitHub Actions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ワークフローの中で、API キーなどの機密情報を安全に使いたい。適切な方法はどれか。",
+   "choices": [
+    "ワークフローの YAML ファイルに、値をそのまま書き込む",
+    "リポジトリの README.md に、値を書いておき、ワークフローから参照する",
+    "リポジトリの Secrets に登録し、ワークフローから secrets コンテキストで参照する",
+    "リポジトリの Variables に登録し、ワークフローから vars コンテキストで参照する"
+   ],
+   "answer": 2,
+   "explanation": "機密情報は Secrets に登録して、ワークフローから secrets コンテキストで参照する。Secrets は暗号化して保存され、ログでもマスクされる。YAML や README に直接書くとリポジトリを見られる人に漏れる。Variables は機密でない設定値を保存するためのもので、機密情報には向かない。",
+   "topic": "GitHub Actions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Actions のワークフローの jobs について、適切な説明はどれか。",
+   "choices": [
+    "複数のジョブは、必ずファイルに書かれた順に1つずつ実行され、並行して実行する方法はない",
+    "1つのワークフローには、ジョブを1つしか定義できない",
+    "ジョブは、ワークフローの実行後に GitHub が自動で追加するもので、ユーザーは定義できない",
+    "複数のジョブは、既定では互いに独立して並行実行され、needs を指定すると実行順序の依存関係を設定できる"
+   ],
+   "answer": 3,
+   "explanation": "ワークフローは1つ以上のジョブで構成され、既定では各ジョブが並行して実行される。あるジョブの完了を待つ場合は needs で依存関係を指定する。各ジョブは複数のステップからなり、ユーザーが YAML で定義する。",
+   "topic": "GitHub Actions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ワークフローのステップで、既存のアクション（たとえば Marketplace で公開されているもの）を再利用して実行したい。ステップに指定するキーはどれか。",
+   "choices": [
+    "uses",
+    "run",
+    "env",
+    "with"
+   ],
+   "answer": 0,
+   "explanation": "ステップで uses を指定すると、リポジトリ内や公開されているアクションを実行できる。run はシェルコマンドを直接実行するキー、env は環境変数の設定、with はアクションに渡す入力値の指定に使う。",
+   "topic": "GitHub Actions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "IDE や GitHub 上で、コードの意味の説明、バグの原因の相談、テストコードの案の作成を、自然言語で対話しながら行いたい。Copilot のどの機能を使うか。",
+   "choices": [
+    "Dependabot alerts",
+    "GitHub Discussions",
+    "Copilot Chat",
+    "GitHub Pages"
+   ],
+   "answer": 2,
+   "explanation": "Copilot Chat は、自然言語で質問や指示を送り、コードの説明、デバッグの相談、テストの作成などを対話形式で行える機能である。Dependabot alerts は脆弱な依存関係の通知、Discussions はコミュニティの議論の場、Pages は静的サイトの公開機能である。",
+   "topic": "GitHub Copilotの機能",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request に対して Copilot にレビューを依頼し、コードの改善点についてのコメントをもらいたい。使う機能はどれか。",
+   "choices": [
+    "CODEOWNERS ファイルによる自動レビュー依頼",
+    "Copilot のコード補完（inline suggestions）",
+    "Dependabot version updates",
+    "Copilot code review"
+   ],
+   "answer": 3,
+   "explanation": "Copilot code review は、Pull Request の変更を Copilot がレビューして、改善点のコメントを付ける機能である。CODEOWNERS は担当する人やチームにレビューを依頼する仕組みで、AI によるレビューではない。コード補完は入力中の候補表示、Dependabot version updates は依存関係の更新 Pull Request の自動作成である。",
+   "topic": "GitHub Copilotの機能",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Copilot Business と Copilot Enterprise について、適切な説明はどれか。",
+   "choices": [
+    "個人ではなく、Organization や Enterprise を通じて契約・管理される、組織向けのプランである",
+    "個人アカウントだけが契約できるプランで、組織の管理者は利用状況を管理できない",
+    "特定のリポジトリを指定して契約するプランで、リポジトリごとに別々に請求される",
+    "GitHub Marketplace の App として購入するプランで、GitHub のアカウントがなくても使える"
+   ],
+   "answer": 0,
+   "explanation": "Copilot Business と Copilot Enterprise は、Organization や Enterprise を通じて契約する組織向けのプランで、管理者がメンバーの利用の可否やポリシーを管理できる。個人向けのプランは Free、Pro、Pro+、Max などである。",
+   "topic": "Copilotのプランの違い",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "学生が GitHub Education の認定を受けたうえで、個人として利用できる Copilot のプランはどれか。",
+   "choices": [
+    "Copilot Business",
+    "Copilot Student",
+    "Copilot Enterprise",
+    "Copilot access"
+   ],
+   "answer": 1,
+   "explanation": "Copilot Student は、GitHub Education で認定された学生向けの個人プランである。Copilot Business と Copilot Enterprise は組織向けのプランで、Copilot access は組織や企業を通じて付与されるアクセスを指す。",
+   "topic": "Copilotのプランの違い",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub 上のリポジトリのページから、新しい codespace を作成したい。適切な操作はどれか。",
+   "choices": [
+    "「Fork」ボタンを押して、フォークしたリポジトリを codespace に変換する",
+    "「Actions」タブで、Codespaces のワークフローを手動で実行する",
+    "「Code」ボタンを開き、「Codespaces」タブから新しい codespace を作成する",
+    "「Insights」タブで、開発環境の作成を選択する"
+   ],
+   "answer": 2,
+   "explanation": "リポジトリのページの「Code」ボタンを開き、「Codespaces」タブで新しい codespace を作成できる。Fork はリポジトリのコピーを作る操作、Actions は自動化の実行、Insights はリポジトリの統計を見る場所であり、codespace の作成とは関係がない。",
+   "topic": "GitHub Codespaces",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "devcontainer.json で定義できる内容として、適切なものはどれか。",
+   "choices": [
+    "リポジトリのブランチに適用する、レビューや必須チェックを求めるブランチ保護ルールの設定",
+    "Organization のメンバーに付与する、Read や Write などのロールと権限の設定",
+    "GitHub Actions のワークフローを実行する、イベントやスケジュールのトリガーの設定",
+    "使用するコンテナーのイメージ、インストールする拡張機能、転送するポートなどの開発環境の設定"
+   ],
+   "answer": 3,
+   "explanation": "devcontainer.json は開発コンテナーの設定ファイルで、使用するイメージや Dockerfile、拡張機能、転送するポート、作成後に実行するコマンドなどを定義する。ブランチ保護ルール、メンバーのロール、ワークフローのスケジュールは、それぞれ別の場所で設定する。",
+   "topic": "開発コンテナー",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "非公開リポジトリのコードを閲覧し、Issue や Pull Request にコメントする必要があるが、コードの変更の push は不要なメンバーがいる。付与する最小の権限として、適切なロールはどれか。",
+   "choices": [
+    "Read",
+    "Triage",
+    "Write",
+    "Maintain"
+   ],
+   "answer": 0,
+   "explanation": "Read は、リポジトリの閲覧やクローン、Issue と Pull Request へのコメントなどができる最小のロールである。Triage は Issue や Pull Request の管理も、Write は push も、Maintain はリポジトリの運営に関する管理もできるロールで、この目的には過剰な権限になる。",
+   "topic": "リポジトリとOrganizationの権限・ロール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization の設定、メンバー、リポジトリ、請求を含めて、Organization 全体を完全に管理できるロールはどれか。",
+   "choices": [
+    "Member",
+    "Owner",
+    "Billing manager",
+    "Moderator"
+   ],
+   "answer": 1,
+   "explanation": "Owner は、Organization のメンバー、チーム、リポジトリ、設定、請求などを完全に管理できるロールである。Member は基本的な参加者のロール、Billing manager は請求の管理を担当するロール、Moderator はコミュニティでのやり取りを管理するロールで、Organization 全体の管理権限はない。",
+   "topic": "リポジトリとOrganizationの権限・ロール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization のメンバーではないが、特定のリポジトリに対してだけアクセス権を与えたい外部の協力者がいる。この立場として、適切なものはどれか。",
+   "choices": [
+    "Organization の Member",
+    "Organization の Owner",
+    "Outside collaborator",
+    "Billing manager"
+   ],
+   "answer": 2,
+   "explanation": "Outside collaborator は、Organization のメンバーではないが、特定のリポジトリへのアクセス権だけを与えられた人である。Member や Owner は Organization の構成員で、Billing manager は請求を管理するロールである。",
+   "topic": "リポジトリとOrganizationの権限・ロール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Enterprise Managed Users のアカウントに適用される制限として、適切なものはどれか。",
+   "choices": [
+    "GitHub Actions と GitHub Codespaces は、機能として利用できない",
+    "自分のアカウントのプロフィールの名前やメールアドレスを、ユーザー自身が自由に変更できる",
+    "IdP を通さず、GitHub のユーザー名とパスワードだけでサインインできる",
+    "企業の外部でコンテンツを公開したり、企業の外のユーザーと共同作業したりすることが制限される"
+   ],
+   "answer": 3,
+   "explanation": "Enterprise Managed Users のアカウントは、企業の外で公開コンテンツを作成したり、企業外のユーザーと共同作業したりできない。プロフィールの名前やメールアドレスは IdP の値が使われ、サインインも IdP を通じて認証する。",
+   "topic": "Enterprise Managed Users",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Enterprise Managed Users を使う企業で、ユーザーが GitHub にサインインする方法として、適切なものはどれか。",
+   "choices": [
+    "企業の ID プロバイダー（IdP）を通じて認証する",
+    "個人用のメールアドレスとパスワードを、GitHub に直接登録して認証する",
+    "Organization の Owner が発行した共通のパスワードを使って認証する",
+    "認証は不要で、企業のネットワークからアクセスするだけで利用できる"
+   ],
+   "answer": 0,
+   "explanation": "Enterprise Managed Users では、ユーザーは企業の IdP を通じて認証し、アカウントのライフサイクルも IdP で管理される。個人のメールアドレスでの登録や共通パスワードの利用は想定されていない。",
+   "topic": "Enterprise Managed Users",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization で Copilot Business を契約している。Organization の Owner が、Copilot を利用できるメンバーを、特定のメンバーやチームだけに限定したい。適切な方法はどれか。",
+   "choices": [
+    "リポジトリのブランチ保護ルールで、利用できるメンバーを指定する",
+    "Organization の Copilot の設定で、利用を許可するメンバーやチームを選択して割り当てる",
+    "リポジトリの CODEOWNERS ファイルに、利用できるメンバーを記載する",
+    "GitHub Marketplace で、メンバーごとに Copilot を個別に購入してもらう"
+   ],
+   "answer": 1,
+   "explanation": "Organization の Owner は、Copilot の設定で、すべてのメンバー、または選択したメンバーやチームに対して、Copilot へのアクセスを割り当てられる。ブランチ保護ルールや CODEOWNERS は Copilot の利用者を管理する仕組みではない。",
+   "topic": "CopilotのOrganizationポリシー",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "個人アカウントが所有するリポジトリで、作成時や設定で選べる公開範囲として、適切なものはどれか。",
+   "choices": [
+    "Public と Internal",
+    "Private と Internal",
+    "Public、Private、Internal のすべて",
+    "Public と Private"
+   ],
+   "answer": 3,
+   "explanation": "個人アカウントのリポジトリは、Public か Private を選べる。Internal は、Enterprise アカウントの下にある Organization で、企業のメンバーに限定して公開するための範囲であり、個人アカウントのリポジトリには存在しない。",
+   "topic": "リポジトリの公開範囲",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "非公開のリポジトリを、特定の外部の個人にだけ見せたい。適切な方法はどれか。",
+   "choices": [
+    "リポジトリを Public にして、URL を限られた相手にだけ伝えておく",
+    "リポジトリを Internal にして、その個人にリンクを共有する",
+    "リポジトリを Private のままにして、その個人を collaborator として招待する",
+    "リポジトリをアーカイブして、その個人に閲覧用のリンクを送って共有する"
+   ],
+   "answer": 2,
+   "explanation": "Private のリポジトリは、アクセス権を付与された人だけが閲覧できる。特定の個人に見せるには、その人を collaborator として招待する。Public にすると URL を知らなくても誰でも閲覧でき、Internal は企業内のメンバー向けの範囲で外部の個人には適さない。アーカイブは読み取り専用にする設定で、公開範囲は変わらない。",
+   "topic": "リポジトリの公開範囲",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリ内の複数のブランチやタグに対してルールをまとめて適用し、複数のルールを重ねて管理したい。使う機能はどれか。",
+   "choices": [
+    "ルールセット（rulesets）",
+    "CODEOWNERS ファイル",
+    "GitHub Actions のワークフロー",
+    "Dependabot の設定ファイル"
+   ],
+   "answer": 0,
+   "explanation": "ルールセットは、ブランチやタグに対するルールを定義して適用する機能で、複数のルールセットを重ねて適用できる。CODEOWNERS はレビュー担当者の指定、ワークフローは自動化の定義、Dependabot の設定は依存関係の更新の設定であり、ブランチやタグのルールを管理する機能ではない。",
+   "topic": "ブランチ保護ルール",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization で、メンバーをグループにまとめ、グループ単位でリポジトリへのアクセス権を付与したり、@メンションで通知を送ったりしたい。使う機能はどれか。",
+   "choices": [
+    "Projects",
+    "Teams",
+    "Discussions",
+    "Gist"
+   ],
+   "answer": 1,
+   "explanation": "Teams は、Organization のメンバーをグループ化し、チーム単位でリポジトリのアクセス権を付与したり、チームへメンションして通知を送ったりできる機能である。Projects は作業の計画と追跡、Discussions はコミュニティの議論、Gist はコードの共有に使う。",
+   "topic": "Organizationの設定とチーム",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue や Pull Request のコメントで、Organization 内のチームにメンションするときの書式として、適切なものはどれか。",
+   "choices": [
+    "#チーム名",
+    "@チーム名（Organization 名は付けない）",
+    "@organization名/チーム名",
+    "organization名/チーム名@"
+   ],
+   "answer": 2,
+   "explanation": "チームへのメンションは、@organization名/チーム名 の形式で書く。@ のあとに Organization 名とチーム名をスラッシュで区切って指定する。# は Issue や Pull Request の番号の参照に使う記号である。",
+   "topic": "Organizationの設定とチーム",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization のプロフィールページに、Organization の紹介を README として表示したい。必要な条件として、適切なものはどれか。",
+   "choices": [
+    "Organization と同じ名前の公開リポジトリを作成し、ルートに README.md を置く",
+    ".github という名前の Gist を作成し、その中に README.md を追加して公開する",
+    "Organization のすべてのリポジトリのルートに、同じ内容の README.md をそれぞれ置く",
+    "Organization に、.github という名前の公開リポジトリを作成し、profile フォルダーに README.md を置く"
+   ],
+   "answer": 3,
+   "explanation": "Organization のプロフィール README は、.github という名前の公開リポジトリの profile フォルダーに README.md を置いて表示する。Organization と同名のリポジトリのルートに置く方法は、個人アカウントのプロフィール README の方式である。",
+   "topic": "Organizationの設定とチーム",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization 内の複数のリポジトリで、独自のファイルがない場合に、共通の CONTRIBUTING.md や CODE_OF_CONDUCT.md を既定として使わせたい。適切な方法はどれか。",
+   "choices": [
+    "Organization の .github リポジトリに、デフォルトのコミュニティヘルスファイルとして置く",
+    "Organization の Wiki に、共通のファイルとして置く",
+    "Organization の Billing 設定の画面から、共通のファイルをアップロードする",
+    "Organization の GitHub Pages のサイトに、共通のファイルとして置く"
+   ],
+   "answer": 0,
+   "explanation": "Organization の .github リポジトリに CONTRIBUTING.md、CODE_OF_CONDUCT.md、SECURITY.md などを置くと、それらを持たない Organization 内のリポジトリで、既定のファイルとして使われる。Wiki、Billing 設定、GitHub Pages には、このように既定値として適用される機能はない。",
+   "topic": "Organizationの設定とチーム",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization のメンバー全員に、Organization が所有するリポジトリへの基本となる権限を設定したい。使う設定はどれか。",
+   "choices": [
+    "ブランチ保護ルール",
+    "Base permissions（Member privileges の設定）",
+    "Outside collaborator の招待",
+    "リポジトリのルールセット"
+   ],
+   "answer": 1,
+   "explanation": "Base permissions は、Organization のメンバー全員に既定で適用される、Organization のリポジトリへの基本の権限（No permission、Read、Write、Admin など）を設定する。ブランチ保護ルールとルールセットはブランチやタグの操作を制限するもので、Outside collaborator の招待は外部の協力者へのアクセス付与である。",
+   "topic": "Organizationの設定とチーム",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization の Owner が、メンバー全員に2要素認証を必須にした。2要素認証を有効にしていないメンバーの扱いとして、適切なものはどれか。",
+   "choices": [
+    "警告が表示されるだけで、Organization のリソースにそのままアクセスできる",
+    "メンバーの一覧から外れ、Organization に再び招待されるまで参加できない",
+    "2要素認証を有効にするまで、Organization のリソースにアクセスできない",
+    "2要素認証の代わりに、パスワードを変更すれば引き続きアクセスできる"
+   ],
+   "answer": 2,
+   "explanation": "2要素認証を必須にすると、有効にしていないメンバーは、有効にするまで Organization のリソースにアクセスできない。メンバーシップは維持される。パスワードの変更では、2要素認証の要件は満たされない。なお、Outside collaborator は、2要素認証が無効だと Organization から削除される。",
+   "topic": "Organizationの設定とチーム",
+   "volatile": true,
+   "createdAt": "2026-11-09"
   }
  ]
 }
