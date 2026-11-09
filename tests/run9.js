@@ -3,8 +3,9 @@ const html=fs.readFileSync(require('path').join(__dirname,'..','index.html'),'ut
 const log=[];const ok=(c,m)=>log.push((c?'PASS ':'FAIL ')+m);
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const uniq=(i,k=0,len=14)=>Array.from({length:len},(_,j)=>String.fromCharCode(0x4e00+i*400+k*60+j)).join('');
-const topics=['GitとGitHubの違い','リポジトリの構成と主要ファイル','ファイルの追加と管理','スター'];
-const mk=i=>({q:'Q'+i+'：'+uniq(i),choices:['正'+uniq(i,1),'誤甲'+uniq(i,2),'誤乙'+uniq(i,3),'誤丙'+uniq(i,4)],answer:0,explanation:'解説'+i,topic:topics[i%4],volatile:i===0});
+// 割り当てのテーマ（分野の全テーマ）と問題のテーマを一致させる：10問は10種のテーマに1問ずつ割り当てられるので、結果が確定する
+const topics=['バージョン管理の目的と利点','GitとGitHubの違い','リポジトリ・コミット・ブランチ','GitHubアカウントの種類','OrganizationとEnterprise','GitHub Flow','Markdown','GitHub DesktopとGitHub Mobile','リポジトリの構成と主要ファイル','リポジトリの作成とテンプレート','ブランチの作成と管理','ファイルの追加と管理','リポジトリのインサイトとメトリクス','スター','フィーチャープレビュー','リポジトリの保守'];
+const mk=i=>({q:'Q'+i+'：'+uniq(i),choices:['正'+uniq(i,1),'誤甲'+uniq(i,2),'誤乙'+uniq(i,3),'誤丙'+uniq(i,4)],answer:0,explanation:'解説'+i,topic:topics[i%16],volatile:i===0});
 let bankQs=Array.from({length:40},(_,i)=>mk(i)),apiCalls=0,bankFetches=0;
 const fakeFetch=async(url,opts)=>{
  if(String(url).includes('bank/basics.json')){bankFetches++;return{ok:true,status:200,json:async()=>({questions:bankQs})};}
@@ -24,7 +25,7 @@ async function start(w,{field='basics',count=10,source,live}={}){const d=w.docum
  ok(apiCalls===0,'no generation API calls');
  ok(new Set(p.questions.map(x=>qid(x.q))).size===10,'10 distinct questions');
  ok(p.questions.every(x=>x.choices[x.answer].startsWith('正')),'answers consistent after re-shuffle');
- ok(new Set(p.questions.map(x=>x.topic)).size===4,'topics spread across plan');
+ ok(new Set(p.questions.map(x=>x.topic)).size===10,'topics spread across plan (10 distinct topics for 10 questions)');
  // 直近に解いた問題は避ける
  const done=[...Array(25).keys()].map(i=>({...mk(i),userAnswer:0,isRight:true}));
  const hist={history:[{id:'a',date:new Date().toISOString(),field:'basics',fieldName:'Git・GitHub の基礎とリポジトリ',fieldIcon:'👥',count:25,correct:25,questions:done}],totalAnswered:25,totalCorrect:25};
