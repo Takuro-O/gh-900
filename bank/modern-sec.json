@@ -451,7 +451,7 @@
    "createdAt": "2026-11-09"
   },
   {
-   "q": "学生が GitHub Education の認定を受けたうえで、個人として利用できる Copilot のプランはどれか。",
+   "q": "認定された学生が、個人として利用できる Copilot のプランはどれか。",
    "choices": [
     "Copilot Business",
     "Copilot Student",
@@ -459,7 +459,7 @@
     "Copilot access"
    ],
    "answer": 1,
-   "explanation": "Copilot Student は、GitHub Education で認定された学生向けの個人プランである。Copilot Business と Copilot Enterprise は組織向けのプランで、Copilot access は組織や企業を通じて付与されるアクセスを指す。",
+   "explanation": "Copilot Student は、認定された学生向けの個人プランである。Copilot Business と Copilot Enterprise は組織向けのプランで、Copilot access は組織や企業を通じて付与されるアクセスを指す。",
    "topic": "Copilotのプランの違い",
    "volatile": true,
    "createdAt": "2026-11-09"
