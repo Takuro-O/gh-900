@@ -300,12 +300,12 @@
    "q": "Organization のオーナーが、Copilot の機能の利用可否や、利用できるモデルを、組織として制御したい。設定する場所として、適切なものはどれか。",
    "choices": [
     "各メンバーが自分の個人アカウントの Settings にある Copilot で個別に設定する",
-    "Organization の Settings にある Copilot の Policies と Models",
+    "Organization の Settings にある Copilot の設定（ポリシー）",
     "リポジトリの Insights タブにある Copilot の設定項目",
     "GitHub Marketplace の Copilot のアプリの管理ページ"
    ],
    "answer": 1,
-   "explanation": "Organization のオーナーは、Organization の Settings にある Copilot の Policies で機能の利用可否を、Models で利用できるモデルを制御できる。企業のオーナーが設定したポリシーは、Organization のレベルでは上書きできない。",
+   "explanation": "Organization のオーナーは、Organization の Settings にある Copilot の設定で、機能の利用可否や、利用できるモデルを組織として制御できる。企業のオーナーが設定したポリシーは、Organization のレベルでは上書きできない。個人の Settings やリポジトリの Insights では、組織としての制御はできない。",
    "topic": "CopilotのOrganizationポリシー",
    "volatile": true,
    "createdAt": "2026-11-09"

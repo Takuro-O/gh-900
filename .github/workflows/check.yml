@@ -1,0 +1,35 @@
+name: 問題バンクの検証
+
+# 問題バンクやアプリを変更したときに、形式・重複・旧名称・正解位置などを自動で検証し、
+# テスト（13本）も実行する。エラーがあるとここで失敗する。
+on:
+  push:
+    branches: [main]
+    paths: ['bank/**', 'index.html', 'tools/**', 'tests/**']
+  pull_request:
+    paths: ['bank/**', 'index.html', 'tools/**', 'tests/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install --no-save jsdom@24
+      - name: 問題バンクを検証
+        run: |
+          for f in basics collab modern-sec; do
+            node tools/validate-bank.mjs "$f"
+          done
+      - name: テストを実行
+        run: |
+          for i in $(seq 1 13); do
+            node "tests/run$i.js"
+          done
