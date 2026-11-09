@@ -1,0 +1,356 @@
+{
+ "field": "modern-sec",
+ "updatedAt": "2026-11-09",
+ "questions": [
+  {
+   "q": "GitHub Actions のワークフローを定義するファイルについて、適切な説明はどれか。",
+   "choices": [
+    "リポジトリのルートに、JSON 形式の workflow.json として保存する",
+    "リポジトリの .github/workflows ディレクトリに、YAML 形式で保存する",
+    ".github ディレクトリに、Markdown 形式の actions.md として保存する",
+    "GitHub の Settings 画面だけで定義し、ファイルとしてはリポジトリに保存しない"
+   ],
+   "answer": 1,
+   "explanation": "GitHub Actions のワークフローは、リポジトリの .github/workflows ディレクトリに置く YAML ファイルで定義する。1つのリポジトリに複数のワークフローファイルを置くことができる。JSON や Markdown の形式ではなく、Settings 画面だけで定義するものでもない。",
+   "topic": "GitHub Actions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Actions で、Pull Request が作成されたことをきっかけに、ワークフローを実行したい。このとき、ワークフローが実行されるきっかけとなる出来事を何と呼ぶか。",
+   "choices": [
+    "イベント",
+    "ジョブ",
+    "ランナー",
+    "ステップ"
+   ],
+   "answer": 0,
+   "explanation": "イベントは、Pull Request の作成、コミットの push、Issue の作成など、ワークフローの実行のきっかけとなる出来事である。ジョブは同じランナー上で実行されるステップの集まり、ランナーはワークフローを実行するサーバー、ステップはジョブ内の1つの作業である。",
+   "topic": "GitHub Actions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "IDE でコードを書いている最中に、入力に応じて、コードの候補を自動的に表示してもらいたい。Copilot のどの機能を使うか。",
+   "choices": [
+    "Copilot CLI",
+    "Pull Request の要約",
+    "コード補完（inline suggestions）",
+    "Copilot Spaces"
+   ],
+   "answer": 2,
+   "explanation": "コード補完（inline suggestions）は、IDE での入力に応じて、コードの候補を自動的に提示する機能である。Copilot CLI はターミナルで使う機能、Pull Request の要約は変更内容の説明を生成する機能、Copilot Spaces は文脈となる資料をまとめて回答の精度を高める機能である。",
+   "topic": "GitHub Copilotの機能",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request に含まれる変更内容や、影響するファイルを、AI に要約させて、レビューで見るべき点を示してもらいたい。Copilot のどの機能を使うか。",
+   "choices": [
+    "コード補完",
+    "Copilot CLI",
+    "Copilot Spaces",
+    "Pull Request の要約（summaries）"
+   ],
+   "answer": 3,
+   "explanation": "Pull Request の要約は、Pull Request の変更内容、影響するファイル、レビューで注目すべき点を AI が要約する機能である。コード補完は入力中の候補の提示、Copilot CLI はターミナルでの利用、Copilot Spaces は文脈となる資料のまとめに使う。",
+   "topic": "GitHub Copilotの機能",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "IDE で、大まかなタスクを指示すると、変更するファイルを自分で判断して編集し、必要に応じてターミナルのコマンドを実行しながら作業を進める。この Copilot の機能はどれか。",
+   "choices": [
+    "エージェントモード（agent mode）",
+    "インラインのコード補完（inline suggestions）",
+    "Pull Request の要約",
+    "Copilot Spaces"
+   ],
+   "answer": 0,
+   "explanation": "エージェントモードは、IDE の中で、変更するファイルの判断、編集、ターミナルのコマンドの実行を、タスクが終わるまで繰り返す機能である。ユーザーが変更を確認し、既定ではコマンドの実行も承認する。コード補完や要約は、自律的に作業を進める機能ではない。",
+   "topic": "Copilotのエージェント機能とマルチモデル",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "タスクを Copilot に任せ、クラウド上の開発環境で、リポジトリを調べて計画を立て、ブランチに変更を加えて、Pull Request の作成まで支援してもらいたい。使う機能はどれか。",
+   "choices": [
+    "Copilot Chat",
+    "Copilot cloud agent",
+    "Copilot CLI",
+    "Copilot Spaces"
+   ],
+   "answer": 1,
+   "explanation": "Copilot cloud agent は、クラウド上の開発環境で、リポジトリの調査、計画、ブランチへの変更、Pull Request の作成の支援を行う。以前は Copilot coding agent と呼ばれていた。Copilot CLI はターミナルで使う機能で、クラウド上の環境で動くものではない。",
+   "topic": "Copilotのエージェント機能とマルチモデル",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Copilot Chat で、回答の生成に使う AI モデルを、会話の途中で切り替えたい。適切な方法はどれか。",
+   "choices": [
+    "別のモデルを使うには、Copilot のサブスクリプションを契約し直す",
+    "モデルは Copilot のインストール時に固定され、あとから変更できない",
+    "チャット画面のモデルの選択欄で、別のモデルを選ぶ",
+    "モデルを変えるには、リポジトリの設定ファイルを書き換えて、コミットする"
+   ],
+   "answer": 2,
+   "explanation": "Copilot Chat では、チャット画面のモデルの選択欄から、会話の途中でも別のモデルに切り替えられる。使えるモデルは、プランや、組織のポリシー、利用する場所によって変わる。契約し直す、固定される、設定ファイルを書き換えるといった手順は不要である。",
+   "topic": "Copilotのエージェント機能とマルチモデル",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "組織の管理者が、メンバーの Copilot の利用を一元的に管理し、ポリシーで制御したい。適切なプランはどれか。",
+   "choices": [
+    "Copilot Free",
+    "Copilot Pro",
+    "Copilot Student",
+    "Copilot Business"
+   ],
+   "answer": 3,
+   "explanation": "Copilot Business は、組織が、メンバーの Copilot の利用を一元的に管理し、ポリシーで制御するためのプランである。Copilot Free、Pro、Student は個人向けのプランで、組織としての一元管理を目的としたものではない。",
+   "topic": "Copilotのプランの違い",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "組織や企業を通じたアクセスを持たない個人の開発者が、無料で Copilot を試したい。適切なプランはどれか。",
+   "choices": [
+    "Copilot Free",
+    "Copilot Business",
+    "Copilot Enterprise",
+    "Copilot Pro+"
+   ],
+   "answer": 0,
+   "explanation": "Copilot Free は、組織や企業を通じたアクセスを持たない個人が、無料で Copilot を試すためのプランである。Copilot Business と Enterprise は組織・企業向けのプランで、Pro+ は、高度な機能を使いたい個人向けの有料のプランである。",
+   "topic": "Copilotのプランの違い",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ブラウザから、リポジトリのコードをビルド・実行・デバッグできる、ターミナルも備えたクラウド上の開発環境を使いたい。適切なものはどれか。",
+   "choices": [
+    "github.dev",
+    "GitHub Codespaces",
+    "GitHub Pages",
+    "GitHub Gist"
+   ],
+   "answer": 1,
+   "explanation": "GitHub Codespaces は、GitHub がホストするクラウド上の開発環境で、ターミナルを使ってコードをビルド・実行・デバッグできる。github.dev は計算リソースを持たない軽量なエディターで、実行はできない。GitHub Pages は静的サイトの公開、Gist はコードの断片の共有に使う。",
+   "topic": "GitHub Codespaces",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Codespaces が動作する環境について、適切な説明はどれか。",
+   "choices": [
+    "ローカルの PC の OS 上で動き、ローカルの CPU とメモリだけを使って処理を行う",
+    "ブラウザのタブの中だけで動き、専用の仮想マシンは割り当てられず、実行環境を持たない",
+    "GitHub がホストする仮想マシン上の Docker コンテナーで動き、環境は Linux である",
+    "リモートの仮想マシン上で動くが、Windows や macOS のイメージを選んで利用することもできる"
+   ],
+   "answer": 2,
+   "explanation": "Codespaces は、GitHub がホストする仮想マシン上の Docker コンテナーで動き、環境は Linux である。ローカルの PC のリソースだけで動くものではなく、ブラウザの中だけで動くものでもない。Windows や macOS は、リモートの開発コンテナーの OS としては使えない。",
+   "topic": "GitHub Codespaces",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Codespaces で、リポジトリを使う全員が、同じツールやランタイムを備えた環境で作業できるようにしたい。環境を定義するファイルはどれか。",
+   "choices": [
+    "workflow.yml",
+    "package.json",
+    ".gitattributes",
+    "devcontainer.json"
+   ],
+   "answer": 3,
+   "explanation": "devcontainer.json は、開発コンテナーの構成を定義するファイルで、ツール、ランタイム、拡張機能、ポートの転送などを指定できる。これをリポジトリに含めると、全員が同じ環境で作業できる。workflow.yml は Actions、package.json は Node.js のパッケージ、.gitattributes は Git の属性の設定に使う。",
+   "topic": "開発コンテナー",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "開発コンテナーの設定ファイルを置く場所として、標準的なものはどれか。",
+   "choices": [
+    "リポジトリの .devcontainer ディレクトリ",
+    "リポジトリの .github/workflows ディレクトリ",
+    "リポジトリの .github/ISSUE_TEMPLATE ディレクトリ",
+    "リポジトリの docs ディレクトリ"
+   ],
+   "answer": 0,
+   "explanation": "開発コンテナーの設定ファイルは、通常、リポジトリの .devcontainer ディレクトリに置く。ほかに、ルートに .devcontainer.json として置く方法もある。.github/workflows は Actions のワークフロー、.github/ISSUE_TEMPLATE は Issue テンプレートを置く場所である。",
+   "topic": "開発コンテナー",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "github.dev エディターについて、適切な説明はどれか。",
+   "choices": [
+    "専用の仮想マシンが割り当てられ、ターミナルでコードをビルド・実行できる",
+    "ブラウザで開く軽量なエディターで、ファイルの編集とコミットはできるが、コードの実行やターミナルは使えない",
+    "GitHub の有料プランのユーザーだけが使える、ブラウザ上のエディターである",
+    "ローカルの PC にインストールして使う、デスクトップ向けのエディターである"
+   ],
+   "answer": 1,
+   "explanation": "github.dev は、ブラウザで開く軽量なエディターで、検索、編集、コミット、Pull Request の作成などができる。計算リソースがないため、コードの実行やターミナルは使えない。実行が必要な場合は、Codespaces を使う。無料で使え、インストールも不要である。",
+   "topic": "github.devエディター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub 上のリポジトリを閲覧しているときに、github.dev エディターをすぐに開くためのキーボード操作として、適切なものはどれか。",
+   "choices": [
+    "/ （スラッシュ）キーを押す",
+    "? （クエスチョン）キーを押す",
+    ". （ピリオド）キーを押す",
+    "t キーを押す"
+   ],
+   "answer": 2,
+   "explanation": "リポジトリや Pull Request の画面で . キーを押すと、github.dev エディターが開く。URL の github.com を github.dev に変えても開ける。/ は検索の入力欄、? はショートカットの一覧、t はファイルの検索に使うキーである。",
+   "topic": "github.devエディター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub の2要素認証の第2要素として使える方法として、適切でないものはどれか。",
+   "choices": [
+    "認証アプリ（TOTP）",
+    "セキュリティキー",
+    "SMS で届くコード",
+    "秘密の質問への回答"
+   ],
+   "answer": 3,
+   "explanation": "GitHub の2要素認証では、認証アプリ、SMS、セキュリティキー、GitHub Mobile などを第2要素に使える。パスキーも利用できる。秘密の質問への回答は、第2要素としてサポートされていない。",
+   "topic": "2要素認証とパスキー",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "2要素認証を設定したあとで、スマートフォンを紛失し、第2要素が使えなくなる場合に備えて、設定時に保存しておくものはどれか。",
+   "choices": [
+    "リカバリーコード",
+    "個人用アクセストークン",
+    "SSH キー",
+    "GPG キー"
+   ],
+   "answer": 0,
+   "explanation": "2要素認証を設定するときにリカバリーコードを保存しておくと、第2要素の端末を紛失しても、そのコードを使ってサインインできる。個人用アクセストークン、SSH キー、GPG キーは、API や Git の認証、コミットの署名に使うもので、第2要素の代わりにはならない。",
+   "topic": "2要素認証とパスキー",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub のパスキーについて、適切な説明はどれか。",
+   "choices": [
+    "メールで届く、ワンタイムのパスワードを入力して本人確認を行う、従来型のサインイン方法である",
+    "公開鍵と秘密鍵のペアを使い、生体認証や PIN で本人確認を行う、フィッシングに強いサインイン方法である",
+    "パスワードを文字列として保存し、サインイン時にフォームへ自動入力するだけの仕組みである",
+    "SMS で届く6桁のコードを入力して、本人確認を行う2要素認証の方法である"
+   ],
+   "answer": 1,
+   "explanation": "パスキーは、公開鍵と秘密鍵のペアを使い、端末での生体認証や PIN によって本人確認を行う。サイトのドメインに結び付いているため、偽サイトでは使えず、フィッシングに強い。メールや SMS で届くコードを入力する方法ではない。",
+   "topic": "2要素認証とパスキー",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "コードを直接 push する権限は必要ないが、Issue や Pull Request の整理（ラベル付け、担当者の割り当てなど）を行うメンバーに付与する、リポジトリのロールはどれか。",
+   "choices": [
+    "Read",
+    "Write",
+    "Triage",
+    "Maintain"
+   ],
+   "answer": 2,
+   "explanation": "Triage は、コードへの書き込み権限なしに、Issue、Discussions、Pull Request を管理できるロールである。Read は閲覧と議論のみ、Write はコードの push ができ、Maintain はリポジトリの日常的な管理ができるロールである。",
+   "topic": "リポジトリとOrganizationの権限・ロール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリのセキュリティ設定や削除を含む、リポジトリへの完全な権限を持つロールはどれか。",
+   "choices": [
+    "Maintain",
+    "Write",
+    "Triage",
+    "Admin"
+   ],
+   "answer": 3,
+   "explanation": "Admin は、セキュリティ設定、リポジトリの設定、削除を含む完全な権限を持つロールである。Maintain は、機密性や破壊性の高い操作を除いた日常的な管理を行う。Write はコードの push、Triage は Issue や Pull Request の管理ができるロールである。",
+   "topic": "リポジトリとOrganizationの権限・ロール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Enterprise Managed Users の説明として、適切なものはどれか。",
+   "choices": [
+    "企業の ID プロバイダー（IdP）がアカウントを作成・管理し、ユーザーは IdP で認証して GitHub を使う",
+    "従業員が各自で作成した個人アカウントをそのまま使い、企業は Organization に招待するだけである",
+    "企業が、すべてのユーザーのパスワードを一括で保管し、代わりにサインインを行う",
+    "外部の共同作業者に、期限付きの一時アカウントを企業が発行して、短期間だけ共有する"
+   ],
+   "answer": 0,
+   "explanation": "Enterprise Managed Users では、企業の ID プロバイダーが、アカウントの作成、ユーザー名、Organization への所属などを管理し、ユーザーは IdP で認証して GitHub を使う。管理対象のアカウントは、企業の外で公開のコンテンツを作ることなどが制限される。",
+   "topic": "Enterprise Managed Users",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization のオーナーが、Copilot の機能の利用可否や、利用できるモデルを、組織として制御したい。設定する場所として、適切なものはどれか。",
+   "choices": [
+    "各メンバーが自分の個人アカウントの Settings にある Copilot で個別に設定する",
+    "Organization の Settings にある Copilot の Policies と Models",
+    "リポジトリの Insights タブにある Copilot の設定項目",
+    "GitHub Marketplace の Copilot のアプリの管理ページ"
+   ],
+   "answer": 1,
+   "explanation": "Organization のオーナーは、Organization の Settings にある Copilot の Policies で機能の利用可否を、Models で利用できるモデルを制御できる。企業のオーナーが設定したポリシーは、Organization のレベルでは上書きできない。",
+   "topic": "CopilotのOrganizationポリシー",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Enterprise アカウントの下にある Organization で、企業のメンバーであれば、アクセス権を個別に付与しなくても閲覧できるが、インターネットには公開しないリポジトリを作りたい。使える公開範囲はどれか。",
+   "choices": [
+    "Public",
+    "Private",
+    "Internal",
+    "Secret"
+   ],
+   "answer": 2,
+   "explanation": "Internal は、Enterprise Cloud で、企業アカウントが所有する Organization で使える公開範囲で、企業のメンバーが閲覧できる。Public は誰でも閲覧でき、Private はアクセスを許可された人だけが閲覧できる。Secret は Gist の公開範囲で、リポジトリには使わない。",
+   "topic": "リポジトリの公開範囲",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "main ブランチへの変更を、必ずレビューと、必須のステータスチェックの成功を経てから、マージさせたい。使う機能はどれか。",
+   "choices": [
+    ".gitignore ファイル",
+    "Issue テンプレート",
+    "リポジトリの Insights の設定",
+    "ブランチ保護ルール"
+   ],
+   "answer": 3,
+   "explanation": "ブランチ保護ルールでは、マージ前に、承認されたレビューの数、ステータスチェックの成功、会話の解決などを必須にできる。.gitignore は追跡しないファイルの指定、Issue テンプレートは Issue の入力の雛形で、マージの条件を強制するものではない。",
+   "topic": "ブランチ保護ルール",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ブランチ保護ルールを設定したブランチで、「Do not allow bypassing the above settings」を有効にしていない場合、既定でルールの制限を受けないのは誰か。",
+   "choices": [
+    "リポジトリの Admin 権限を持つユーザー",
+    "Write 権限を持つユーザー",
+    "Triage 権限を持つユーザー",
+    "Read 権限を持つユーザー"
+   ],
+   "answer": 0,
+   "explanation": "ブランチ保護ルールの制限は、既定では、Admin 権限を持つユーザーには適用されない。「Do not allow bypassing the above settings」を有効にすると、Admin にも制限が適用される。Write、Triage、Read の権限を持つユーザーは、ルールの制限を受ける。",
+   "topic": "ブランチ保護ルール",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  }
+ ]
+}

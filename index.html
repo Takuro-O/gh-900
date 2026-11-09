@@ -1417,7 +1417,7 @@ ${source.replace(/<\/?資料>/g, '')}
 - GitHub は製品名・プラン名・機能の変更が多い。現行の名称を使い、廃止された機能（例：Projects (classic)）は、問題文にも選択肢（ひっかけ含む）にも使わない
 - GitHub Advanced Security は2025年に GitHub Secret Protection と GitHub Code Security に分かれた。学習ガイドの出題範囲に明記がないため、題材にしない
 - 料金・使用量・クレジット数・ファイルサイズや件数の上限など、変わりやすい数字は問題にしない。概念や使い分けを問う
-- GitHub Copilot は機能・対応モデル・プランが頻繁に変わる。プランの名称（個人向け：Free・Pro・Pro+・Max、組織向け：Business・Enterprise）と、その役割の違いまでにとどめる。価格・使用量・対応モデルの名前は問わない
+- GitHub Copilot は機能・対応モデル・プランが頻繁に変わる。Copilot coding agent は Copilot cloud agent に改称されたので、必ず cloud agent と書く。プランの名称（個人向け：Free・Student・Pro・Pro+・Max、組織向け：Business・Enterprise）と、その役割の違いまでにとどめる。価格・使用量（AI クレジット）・対応モデルの名前は問わない
 - それでも正誤が機能の仕様・提供状況・名称の変更に左右される問題には volatile を true にする（それ以外は false）`;
 
     const planBlock = topicPlan && topicPlan.length
@@ -1509,8 +1509,8 @@ ${planBlock}${avoidBlock}【良問の条件】
 
   // ── 生成問題の検証・正規化（不正な問題は null → 除外） ──
   // 旧名称・廃止された機能。問題文・選択肢（ひっかけ含む）に使われた問題は捨てる。
-  // 公式ドキュメントで確認できたものだけを入れる（Projects (classic) は廃止のお知らせを確認済み）。増やすときも、先に公式で確認すること。
-  const OLD_NAME_RE = /Projects\s*[(（]\s*classic\s*[)）]|classic\s*projects?|クラシック\s*(?:の\s*)?プロジェクト/i;
+  // 公式ドキュメントで確認できたものだけを入れる（Projects (classic) は廃止のお知らせ、Copilot coding agent は「Copilot cloud agent（旧 Copilot coding agent）」の記載を確認済み）。増やすときも、先に公式で確認すること。
+  const OLD_NAME_RE = /Projects\s*[(（]\s*classic\s*[)）]|classic\s*projects?|クラシック\s*(?:の\s*)?プロジェクト|Copilot\s*coding\s*agent/i;
   function normalizeQuestion(raw, field, useSource) {
     if (!raw || typeof raw !== 'object') return null;
     const q = typeof raw.q === 'string' ? raw.q.trim() : '';
