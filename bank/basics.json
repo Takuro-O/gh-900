@@ -351,6 +351,356 @@
    "topic": "リポジトリ・コミット・ブランチ",
    "volatile": false,
    "createdAt": "2026-11-09"
+  },
+  {
+   "q": "複数の開発者が同じファイルの同じ行を別々に変更し、それらを統合するときに、Git が自動では解決できない状態を何と呼ぶか。",
+   "choices": [
+    "リベース",
+    "コンフリクト（競合）",
+    "チェリーピック",
+    "スカッシュ"
+   ],
+   "answer": 1,
+   "explanation": "コンフリクトは、同じ箇所が別々に変更され、Git が自動では統合できない状態である。開発者が内容を確認して手動で解決し、コミットする。リベース、チェリーピック、スカッシュは履歴を操作する方法の名前で、統合できない状態を指す言葉ではない。",
+   "topic": "バージョン管理の目的と利点",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リモートリポジトリにある最新の変更を、ローカルに取得して、現在のブランチに統合したい。使う操作はどれか。",
+   "choices": [
+    "pull",
+    "push",
+    "clone",
+    "commit"
+   ],
+   "answer": 0,
+   "explanation": "pull は、リモートの最新の変更を取得して、現在のブランチに統合する操作である。push はローカルのコミットをリモートへ送信する操作、clone はリポジトリを新しくローカルに複製する操作、commit は変更をローカルの履歴に記録する操作である。",
+   "topic": "GitとGitHubの違い",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Git のリポジトリの説明として、適切なものはどれか。",
+   "choices": [
+    "Pull Request のレビューについて議論するための場所",
+    "コードを自動的にビルドしてテストするための実行環境",
+    "プロジェクトのファイルと、それらの変更履歴を保管する場所",
+    "Web サイトとして公開するための静的ファイルの置き場所"
+   ],
+   "answer": 2,
+   "explanation": "リポジトリは、プロジェクトのファイルと、それらの変更履歴を保管する場所である。Pull Request の議論、ビルドやテストの実行環境、Web サイトの公開は、リポジトリそのものの定義ではなく、GitHub が提供する別の機能の役割である。",
+   "topic": "リポジトリ・コミット・ブランチ",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "個人アカウントが所有するリポジトリに、ほかの GitHub ユーザーが書き込めるようにしたい。招待された相手は、そのリポジトリの何として追加されるか。",
+   "choices": [
+    "Collaborator",
+    "Maintainer",
+    "Sponsor",
+    "Follower"
+   ],
+   "answer": 0,
+   "explanation": "個人アカウントのリポジトリに招待されたユーザーは、承諾すると Collaborator としてアクセスできるようになる。Sponsor は活動を資金面で支援する人、Follower はユーザーの活動を追う人で、リポジトリへのアクセス権を持つ立場ではない。",
+   "topic": "GitHubアカウントの種類",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "1人のユーザーが、複数の Organization のメンバーとして活動する場合の、アカウントの扱いとして適切なものはどれか。",
+   "choices": [
+    "Organization ごとに、別々の個人アカウントを作成しなければならない",
+    "個人アカウントは、同時に1つの Organization にしか所属できない",
+    "Organization に所属するには、個人アカウントを Organization アカウントに変換しなければならない",
+    "1つの個人アカウントで、複数の Organization に所属できる"
+   ],
+   "answer": 3,
+   "explanation": "GitHub では、人は常に個人アカウントでサインインし、1つの個人アカウントで複数の Organization に所属できる。Organization ごとに個人アカウントを作る必要はなく、所属のために個人アカウントを変換する必要もない。",
+   "topic": "GitHubアカウントの種類",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization で、リポジトリへのアクセス権を、メンバーを個別に設定せず、グループ単位でまとめて付与したい。使う機能はどれか。",
+   "choices": [
+    "Milestone",
+    "Release",
+    "Team",
+    "Wiki"
+   ],
+   "answer": 2,
+   "explanation": "Team は、Organization 内のメンバーをグループにまとめ、リポジトリへのアクセス権をグループ単位で管理できる機能である。Milestone は作業の進捗管理、Release はバージョンの配布、Wiki はドキュメントのための機能で、アクセス権の管理には使わない。",
+   "topic": "OrganizationとEnterprise",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "セキュリティ要件のため、GitHub を自社のインフラ上に構築して運用したい。選択肢として適切なものはどれか。",
+   "choices": [
+    "GitHub Enterprise Cloud",
+    "GitHub Enterprise Server",
+    "GitHub Free",
+    "GitHub Mobile"
+   ],
+   "answer": 1,
+   "explanation": "GitHub Enterprise Server は、自社のインフラ上で運用する形態である。GitHub Enterprise Cloud は GitHub がクラウドでホストする形態、GitHub Free は github.com の無料プラン、GitHub Mobile はスマートフォン向けのアプリであり、自社のインフラ上には構築しない。",
+   "topic": "OrganizationとEnterprise",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Flow で、新しい変更に取りかかるときの最初のステップはどれか。",
+   "choices": [
+    "Pull Request を作成してレビューを依頼する",
+    "変更を main にマージする",
+    "作業用のブランチを削除する",
+    "main から作業用のブランチを作成する"
+   ],
+   "answer": 3,
+   "explanation": "GitHub Flow は、ブランチの作成、変更のコミットと push、Pull Request の作成、レビューへの対応、マージ、ブランチの削除の順で進む。最初のステップは、main から作業用のブランチを作成することである。",
+   "topic": "GitHub Flow",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request でレビュアーから修正を依頼された。GitHub Flow に沿った対応として適切なものはどれか。",
+   "choices": [
+    "同じブランチに追加のコミットを push する。Pull Request は自動的に更新される",
+    "修正用に新しい Pull Request を作成し、元の Pull Request は閉じる",
+    "main に修正を直接コミットして、Pull Request を作り直す",
+    "ブランチを削除して、同じ名前で作り直す"
+   ],
+   "answer": 0,
+   "explanation": "レビューでの指摘には、同じブランチにコミットを追加して push する。Pull Request は自動的に更新され、議論の経緯も1か所に残る。新しい Pull Request を作ったり、main に直接コミットしたりする必要はない。",
+   "topic": "GitHub Flow",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Desktop の説明として、適切なものはどれか。",
+   "choices": [
+    "GitHub.com 上のリポジトリでしか使えず、ほかの Git ホスティングサービスのリポジトリは扱えない",
+    "GitHub の有料プランのユーザーだけが使える、ブラウザ上で動作するコードエディターである",
+    "Git の操作を画面上で行える無料のアプリで、GitHub 以外の Git ホスティングサービスのリポジトリでも使える",
+    "コミットとプッシュだけに対応していて、ブランチの作成や Pull Request の作成にはブラウザが必要である"
+   ],
+   "answer": 2,
+   "explanation": "GitHub Desktop は、Git の操作を画面上で行える無料のオープンソースのアプリで、クローン、ブランチの作成、コミット、プッシュ、Pull Request の作成などができる。GitHub 以外の Git ホスティングサービスのリポジトリでも使える。ブラウザ上のエディターではない。",
+   "topic": "GitHub DesktopとGitHub Mobile",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "公開リポジトリのコードを、ほかの人がどのような条件で利用・改変・再配布できるかを明示したい。リポジトリに用意するファイルはどれか。",
+   "choices": [
+    "SECURITY.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE"
+   ],
+   "answer": 3,
+   "explanation": "LICENSE ファイルで、コードの利用・改変・再配布の条件を示す。ライセンスがないと、既定では他者にそれらの許可が与えられない。SECURITY.md は脆弱性の報告方法、CODE_OF_CONDUCT.md は行動規範、CONTRIBUTING.md は貢献の手順を示すファイルである。",
+   "topic": "リポジトリの構成と主要ファイル",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "新しいリポジトリを作成するときに、使用する言語に合わせて、追跡する必要のないファイルを除外する設定を自動で追加したい。作成画面で選ぶものはどれか。",
+   "choices": [
+    "ブランチ保護ルール",
+    ".gitignore のテンプレート",
+    "Issue テンプレート",
+    "Dependabot の設定"
+   ],
+   "answer": 1,
+   "explanation": "リポジトリの作成画面では、言語や環境に合わせた .gitignore のテンプレートを選んで、ビルドの成果物などを追跡対象から外す設定を追加できる。ブランチ保護ルール、Issue テンプレート、Dependabot の設定は、作成時に .gitignore を追加する選択肢ではない。",
+   "topic": "リポジトリの作成とテンプレート",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub 上で新しいリポジトリを作成するときに、README ファイルを追加するオプションを選んだ場合の結果として、適切なものはどれか。",
+   "choices": [
+    "README.md は作られるが、コミットはされず、あとで手動でコミットする必要がある",
+    "README.md の内容が、リポジトリの説明（About）として自動的に同期される",
+    "作成と同時に README.md を含む初期コミットが作られ、すぐにクローンして使える",
+    "リポジトリが自動的に公開リポジトリとして作成される"
+   ],
+   "answer": 2,
+   "explanation": "README を追加して作成すると、README.md を含む初期コミットが作られ、デフォルトブランチができた状態になるため、すぐにクローンして作業を始められる。README の内容が About に同期されることや、公開範囲が自動で決まることはない。",
+   "topic": "リポジトリの作成とテンプレート",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリを開いたときに最初に表示され、Pull Request を作成するときの既定のマージ先にもなるブランチを何と呼ぶか。",
+   "choices": [
+    "デフォルトブランチ",
+    "ヘッドブランチ",
+    "フィーチャーブランチ",
+    "リリースブランチ"
+   ],
+   "answer": 0,
+   "explanation": "デフォルトブランチは、リポジトリを開いたときに表示される基準のブランチで、Pull Request の既定のマージ先にもなる。ヘッドブランチは Pull Request の変更を含む側のブランチで、フィーチャーブランチやリリースブランチは用途ごとの運用上の呼び名である。",
+   "topic": "ブランチの作成と管理",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリのデフォルトブランチの名前を、GitHub 上で変更できるのは誰か。",
+   "choices": [
+    "Write 権限を持つユーザーなら誰でも",
+    "リポジトリの管理者（Admin 権限を持つユーザー）",
+    "Organization の Billing manager だけ",
+    "GitHub のサポートに依頼した場合だけ"
+   ],
+   "answer": 1,
+   "explanation": "デフォルトブランチの名前を変更できるのは、リポジトリの管理者である。そのほかの多くのブランチは、Write 権限を持つユーザーが変更できる。変更後は、ローカルの環境を更新するよう案内が表示される。",
+   "topic": "ブランチの作成と管理",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "動画や大きなバイナリファイルを扱うリポジトリで、リポジトリが肥大化しないように、大きなファイルを別の仕組みで管理したい。使う機能はどれか。",
+   "choices": [
+    "GitHub Gist",
+    "Git submodule",
+    "Git LFS",
+    "GitHub Packages"
+   ],
+   "answer": 2,
+   "explanation": "Git LFS は、大きなファイルの実体を別の場所に保存し、リポジトリにはその参照（ポインター）だけを置く仕組みである。Gist はコードの断片の共有、submodule は別のリポジトリの組み込み、GitHub Packages はパッケージの配布に使う機能である。",
+   "topic": "ファイルの追加と管理",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "ファイルの特定の行が、いつ、誰によって、どのコミットで最後に変更されたかを、行ごとに確認したい。GitHub 上で使う表示はどれか。",
+   "choices": [
+    "Raw",
+    "Compare",
+    "Insights",
+    "Blame"
+   ],
+   "answer": 3,
+   "explanation": "Blame の表示では、ファイルの各行について、最後に変更したコミットとその作成者、時期を確認できる。Raw はファイルの内容だけを表示する形式、Compare は2つの参照の差分を見る機能、Insights はリポジトリ全体の活動を見る機能である。",
+   "topic": "ファイルの追加と管理",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリが依存しているパッケージの一覧と、そのバージョンを確認したい。見る機能として適切なものはどれか。",
+   "choices": [
+    "Dependency graph",
+    "Traffic",
+    "Code frequency",
+    "Network graph"
+   ],
+   "answer": 0,
+   "explanation": "Dependency graph は、リポジトリが依存しているパッケージとそのバージョンを一覧で示す（公開リポジトリでは、そのリポジトリに依存しているものも確認できる）。Traffic は閲覧数、Code frequency はコードの追加・削除の推移、Network graph はブランチやフォークの関係を示す。",
+   "topic": "リポジトリのインサイトとメトリクス",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Star を付けたリポジトリが増えてきた。テーマごとに整理して、見返しやすくしたい。使える機能はどれか。",
+   "choices": [
+    "Watch の Custom 設定",
+    "Star の Lists（リスト）",
+    "リポジトリの Topics",
+    "Gist"
+   ],
+   "answer": 1,
+   "explanation": "Star を付けたリポジトリは、Lists を作って、テーマごとにまとめられる。Watch の Custom 設定は通知の条件、Topics はリポジトリの所有者が付ける分類のタグ、Gist はコードの断片の共有に使う。Lists は公開プレビューの機能で、仕様が変わる可能性がある。",
+   "topic": "スター",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "自分は開発に参加しないが、あるリポジトリの Issue や Pull Request などの活動の通知を受け取りたい。リポジトリに対して行う操作はどれか。",
+   "choices": [
+    "Star を付ける",
+    "Fork する",
+    "Watch に設定する",
+    "Clone する"
+   ],
+   "answer": 2,
+   "explanation": "Watch に設定すると、そのリポジトリの活動の通知を受け取れる。通知の範囲は設定で選べる。Star はリポジトリの保存、Fork は自分のアカウントへのコピー、Clone はローカルへの複製であり、通知の受け取りには関係しない。",
+   "topic": "スター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Feature preview で有効にできる、公開プレビュー中の機能の位置づけとして、適切なものはどれか。",
+   "choices": [
+    "正式版と同じ SLA が適用され、仕様が変更されることはない",
+    "招待された Organization のメンバーだけが使える、非公開のテスト機能である",
+    "有効にするには、有料プランへの切り替えが必須である",
+    "ドキュメントはあるが、SLA や技術サポートの対象ではなく、今後変更される可能性がある"
+   ],
+   "answer": 3,
+   "explanation": "公開プレビューの機能は、ドキュメントが公開されているが、SLA や技術サポートの対象外であり、今後変更される可能性がある。Feature preview から、有料プランへの切り替えなしで有効にできる機能もある。",
+   "topic": "フィーチャープレビュー",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Feature preview で、ある機能を「Enable」にした。この設定の適用範囲として、適切なものはどれか。",
+   "choices": [
+    "自分の個人アカウントだけに適用される",
+    "所属するすべての Organization のメンバーに適用される",
+    "自分が所有するリポジトリの共同作業者全員に適用される",
+    "GitHub のすべてのユーザーに適用される"
+   ],
+   "answer": 0,
+   "explanation": "Feature preview での有効・無効の切り替えは、自分の個人アカウントに対して行うもので、Organization のメンバーや共同作業者、ほかのユーザーには影響しない。",
+   "topic": "フィーチャープレビュー",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリを別のユーザーや Organization に移管したい。Issue、Pull Request、Star、Watcher を維持したまま所有者を変えるには、どうするか。",
+   "choices": [
+    "リポジトリを Fork して、元のリポジトリを削除し、Fork 先を新しい所有者に渡す",
+    "リポジトリの Settings の Danger Zone から、リポジトリを Transfer する",
+    "新しい所有者のもとにクローンして、新規にプッシュし、元のリポジトリを削除する",
+    "リポジトリをアーカイブして、新しい所有者に管理者の権限を付与する"
+   ],
+   "answer": 1,
+   "explanation": "Settings の Danger Zone にある Transfer で移管すると、Issue、Pull Request、Star、Watcher、Git の履歴が引き継がれ、古い URL からもリダイレクトされる。Fork や新規プッシュでは、これらは引き継がれない。アーカイブは所有者を変えるものではない。",
+   "topic": "リポジトリの保守",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリの名前を変更した。古い名前の URL に対する動作として、適切なものはどれか。",
+   "choices": [
+    "古い URL は無効になり、新しい名前の URL を共有し直さないと、どこからもアクセスできなくなる",
+    "Web ではリダイレクトされるが、git の操作はすべて失敗する",
+    "Web へのアクセスや git の clone・fetch は、新しい名前へ自動的にリダイレクトされる",
+    "リダイレクトはされるが、Issue や Star は新しい名前に引き継がれず、作り直す必要がある"
+   ],
+   "answer": 2,
+   "explanation": "リポジトリの名前を変更しても、古い URL への Web アクセスや git の操作は新しい名前へリダイレクトされ、Issue や Star も引き継がれる。ただし、ローカルの clone では新しい URL に更新することが推奨される。同じ名前で新しいリポジトリを作ると、リダイレクトは働かなくなる。",
+   "topic": "リポジトリの保守",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Markdown で、第2レベルの見出しを書く方法として適切なものはどれか。",
+   "choices": [
+    "行頭に # を1つだけ付けて、見出しの文を書く",
+    "見出しの文を ** で囲む",
+    "行頭に - を付けて、見出しの文を書く",
+    "行頭に ## とスペースを付けて、見出しの文を書く"
+   ],
+   "answer": 3,
+   "explanation": "見出しは、行頭の # の数でレベルが決まり、## は第2レベルの見出しになる。# を1つだけ付けると第1レベル、** で囲むと太字、行頭の - はリストの項目になる。",
+   "topic": "Markdown",
+   "volatile": false,
+   "createdAt": "2026-11-09"
   }
  ]
 }
