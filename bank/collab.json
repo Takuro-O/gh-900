@@ -1,0 +1,356 @@
+{
+ "field": "collab",
+ "updatedAt": "2026-11-09",
+ "questions": [
+  {
+   "q": "GitHub の Issue について、適切な説明はどれか。",
+   "choices": [
+    "リポジトリ内で、バグの報告、機能の要望、作業の追跡を行い、コメントで議論できる機能である",
+    "コードの変更を提案して、レビューを受けたうえで、ブランチにマージするための機能である",
+    "リポジトリとは独立して、コードの断片やメモを共有するための機能である",
+    "リポジトリの内容から、静的な Web サイトを生成して公開するための機能である"
+   ],
+   "answer": 0,
+   "explanation": "Issue は、バグの報告、機能の要望、タスクの追跡などをリポジトリ内で管理する機能で、コメントでの議論や、ラベル・担当者・マイルストーンの設定ができる。コードの変更の提案とレビューは Pull Request、コードの断片の共有は Gist、静的サイトの公開は GitHub Pages の役割である。",
+   "topic": "Issue",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "同じリポジトリの中で、Issue と Pull Request の番号（#12 など）の付き方として、適切なものはどれか。",
+   "choices": [
+    "Issue と Pull Request は別々に番号が振られ、同じ番号が両方に存在することがある",
+    "Issue と Pull Request は共通の連番で、同じ番号が両方に付くことはない",
+    "Issue だけに番号が付き、Pull Request には番号が付かない",
+    "Pull Request だけに番号が付き、Issue には番号が付かない"
+   ],
+   "answer": 1,
+   "explanation": "同じリポジトリでは、Issue と Pull Request に共通の連番が振られる。たとえば #12 が Issue なら、#12 の Pull Request は存在しない。#12 のように参照すれば、どちらであっても同じ書き方でリンクできる。",
+   "topic": "Issue",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue で、結論が決まっていない自由な議論に発展した。内容を議論の場に移したい。適切な対応はどれか。",
+   "choices": [
+    "Issue を Pull Request に変換する",
+    "Issue を Gist に変換する",
+    "Issue を Discussion に変換する",
+    "Issue を Wiki のページに変換する"
+   ],
+   "answer": 2,
+   "explanation": "作業の追跡というより、自由な議論に向いた Issue は、Discussion に変換できる。Pull Request はコードの変更の提案、Gist はコードの断片の共有、Wiki はドキュメントを置く場所で、議論の場の移動先としては適切でない。",
+   "topic": "Issue",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub の Pull Request について、適切な説明はどれか。",
+   "choices": [
+    "リポジトリのコードを、自分のローカルのマシンに複製して、作業を始めるための操作である",
+    "作業の予定や進捗を、表やボードの形式で計画し、追跡するための機能である",
+    "リポジトリのファイルの変更履歴をすべて削除して、容量を軽くするための操作である",
+    "ブランチでの変更をほかのブランチへ取り込むことを提案し、議論やレビューを経て、マージするための機能である"
+   ],
+   "answer": 3,
+   "explanation": "Pull Request は、ブランチでの変更を別のブランチ（多くは main）に取り込むことを提案する機能で、差分の確認、コメントによる議論、レビューを経てマージする。ローカルへの複製は clone、計画・追跡は Projects にあたる。",
+   "topic": "Pull Request",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "作業の途中の段階で、早めにほかのメンバーからフィードバックを受けたいが、誤ってマージされないようにしたい。適切な方法はどれか。",
+   "choices": [
+    "Pull Request を作成せず、ブランチをそのまま共有する",
+    "Draft の Pull Request として作成する",
+    "Pull Request を作成して、すぐにクローズする",
+    "Pull Request にラベルを付けず、担当者も設定しない"
+   ],
+   "answer": 1,
+   "explanation": "Draft の Pull Request は、マージできない状態で作成でき、コードオーナーにも自動ではレビューが依頼されない。準備ができたら Ready for review にして、レビューを依頼する。ラベルや担当者の有無は、マージできるかどうかとは関係がない。",
+   "topic": "Pull Request",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request をマージするときに、複数のコミットを1つのコミットにまとめて、デフォルトブランチの履歴を簡潔に保ちたい。選ぶマージ方法はどれか。",
+   "choices": [
+    "Squash and merge",
+    "Create a merge commit",
+    "Rebase and merge",
+    "Close pull request"
+   ],
+   "answer": 0,
+   "explanation": "Squash and merge は、Pull Request のすべてのコミットを1つにまとめて、ベースブランチに追加する。Create a merge commit はすべてのコミットを残したうえで、マージコミットを追加する。Rebase and merge はコミットを個別に、線形の履歴として追加する。Close pull request はマージせずに閉じる操作である。",
+   "topic": "Pull Request",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Discussions について、適切な説明はどれか。",
+   "choices": [
+    "バグの修正が完了するまでの作業を、担当者ごとに割り当てて追跡するための場である",
+    "コードの変更を差分で確認し、レビューしたうえで承認を得るための場である",
+    "プロジェクトの方向性、アイデア、質問など、結論の決まっていない自由な会話を、コミュニティで行う場である",
+    "ワークフローの実行結果とログを、ジョブごとに確認するための場である"
+   ],
+   "answer": 2,
+   "explanation": "Discussions は、アナウンス、アイデアの相談、質問、意見の確認など、結論の決まっていない会話をコミュニティで行うための場である。作業の追跡は Issue や Projects、コードのレビューは Pull Request、ワークフローの結果は Actions の役割である。使うには、管理者が有効にする必要がある。",
+   "topic": "Discussions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Discussions の質問と回答（Q&A）のカテゴリで、質問に対する有用なコメントを目立たせて、あとから見つけやすくしたい。できる操作はどれか。",
+   "choices": [
+    "質問のコメントにラベルを付けて、マイルストーンに追加する",
+    "質問を Pin して、Pull Request に変換する",
+    "質問を Gist として保存する",
+    "コメントを回答（answer）としてマークする"
+   ],
+   "answer": 3,
+   "explanation": "Q&A のカテゴリでは、コメントを回答としてマークでき、質問した人や読む人が有用な情報を見つけやすくなる。ラベル、マイルストーン、Pull Request への変換、Gist への保存は、回答を示す機能ではない。",
+   "topic": "Discussions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request がデフォルトブランチにマージされたときに、Issue #42 を自動でクローズしたい。適切な方法はどれか。",
+   "choices": [
+    "Issue #42 のコメントに「merged」と書く",
+    "Pull Request のタイトルの先頭に「[42]」を付ける",
+    "Pull Request の説明に「Closes #42」のようなキーワードを書く",
+    "Pull Request に「issue」という名前のラベルを付ける"
+   ],
+   "answer": 2,
+   "explanation": "Pull Request の説明やコミットメッセージに、close、fix、resolve などのキーワードと Issue 番号（Closes #42 など）を書くと、デフォルトブランチへのマージ時に Issue が自動でクローズされる。タイトルの書き方やラベルでは、Issue は閉じられない。",
+   "topic": "Pull RequestとIssueの連携",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "キーワードを書かずに、Pull Request と Issue を手動で関連付けたい。使う場所はどれか。",
+   "choices": [
+    "サイドバーの「Milestone」",
+    "サイドバーの「Development」",
+    "サイドバーの「Labels」",
+    "サイドバーの「Assignees」"
+   ],
+   "answer": 1,
+   "explanation": "Pull Request や Issue のサイドバーにある「Development」から、関連する Issue や Pull Request、ブランチを手動で関連付けられる。Milestone、Labels、Assignees は、それぞれ進捗のまとまり、分類、担当者を設定する場所である。",
+   "topic": "Pull RequestとIssueの連携",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリで Issue のテンプレートを用意したい。テンプレートのファイルを置く場所として、適切なものはどれか。",
+   "choices": [
+    "リポジトリのルートにある ISSUES ディレクトリ",
+    "リポジトリの docs/templates ディレクトリ",
+    "リポジトリの Wiki の Templates ページ",
+    "リポジトリの .github/ISSUE_TEMPLATE ディレクトリ"
+   ],
+   "answer": 3,
+   "explanation": "Issue のテンプレートは、リポジトリの .github/ISSUE_TEMPLATE ディレクトリに置く。テンプレートを利用できるのは、変更がデフォルトブランチに反映されたあとである。Wiki や、そのほかの場所に置いても、Issue の作成画面には反映されない。",
+   "topic": "テンプレートとフィルター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue の作成画面に、ドロップダウンやチェックボックスなどの入力欄を持つフォームを表示したい。適切な方法はどれか。",
+   "choices": [
+    ".github/ISSUE_TEMPLATE に、YAML 形式の issue forms を作成する",
+    ".github/ISSUE_TEMPLATE に、Markdown 形式のテンプレートを作成し、ドロップダウンの項目を書く",
+    "リポジトリのルートに、CODEOWNERS ファイルを作成して、入力欄の項目を定義する",
+    "リポジトリの Settings で、入力欄のあるフォームを選択して有効にする"
+   ],
+   "answer": 0,
+   "explanation": "issue forms は、.github/ISSUE_TEMPLATE に YAML ファイルを置いて定義し、入力欄、ドロップダウン、チェックボックスなどを持つフォームを作成できる。Markdown 形式のテンプレートは、あらかじめ書かれた本文を挿入する形式で、入力欄を定義するものではない。CODEOWNERS はレビュー担当者の指定に使う。",
+   "topic": "テンプレートとフィルター",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue や Pull Request で、同じ内容のコメントを何度も書く必要がある。入力の手間を減らす機能はどれか。",
+   "choices": [
+    "Issue のテンプレート",
+    "保存済み返信（Saved replies）",
+    "CODEOWNERS ファイル",
+    "Discussions のカテゴリ"
+   ],
+   "answer": 1,
+   "explanation": "保存済み返信は、よく使うコメントを登録しておき、コメント欄から呼び出して再利用する機能である。Issue のテンプレートは Issue を作成するときの雛形、CODEOWNERS はレビュー担当者の指定、Discussions のカテゴリは議論の分類で、コメントを再利用する機能ではない。",
+   "topic": "担当者と保存済み返信",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "あるリポジトリを Watch していなくても、自分が @メンションされた会話や、自分がコメントした会話の通知を受け取れる。この理由として、適切なものはどれか。",
+   "choices": [
+    "Star を付けているリポジトリは、すべての会話が自動的に購読されるため",
+    "会話を購読するには、リポジトリの Owner の許可が必要で、許可が下りるため",
+    "Fork したリポジトリは、すべての会話が自動的に購読されるため",
+    "会話に参加（participating）すると、その会話が自動的に購読されるため"
+   ],
+   "answer": 3,
+   "explanation": "コメントしたり、@メンションされたりして会話に参加すると、その会話は自動的に購読され、Watch していなくても通知を受け取れる。購読は手動で解除することもできる。Star や Fork は、会話の購読とは関係がない。",
+   "topic": "通知",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "あるリポジトリについて、Issue と Release の通知だけを受け取りたい。ほかの通知は不要である。Watch の設定として、適切なものはどれか。",
+   "choices": [
+    "Custom を選び、Issues と Releases を指定する",
+    "All Activity を選ぶ",
+    "Ignore を選ぶ",
+    "Star を付ける"
+   ],
+   "answer": 0,
+   "explanation": "Watch の Custom では、Issues、Pull requests、Releases、Discussions、Security alerts などのイベント種別を選んで、通知を絞れる。All Activity は会話のすべてが対象になる。Ignore は通知を受け取らない設定で、参加した会話や @メンション以外は届かない。Star はブックマークであり、通知の設定ではない。",
+   "topic": "通知",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub の secret gist について、適切な説明はどれか。",
+   "choices": [
+    "招待したユーザーだけが閲覧でき、URL を知っていても、ほかの人は閲覧できない",
+    "作成者がサインインしているときだけ、閲覧できる",
+    "検索や Discover には表示されないが、URL を知っていれば誰でも閲覧できる",
+    "Organization のメンバーだけが閲覧でき、外部の人は閲覧できない"
+   ],
+   "answer": 2,
+   "explanation": "secret gist は、Discover に表示されず、検索でも見つからないが、URL を知っていれば誰でも閲覧できる。そのため、秘密の情報を置く用途には向かない。完全に非公開にしたい場合は、非公開のリポジトリを使う。",
+   "topic": "Gist",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Gist について、適切な説明はどれか。",
+   "choices": [
+    "バージョン管理の対象ではなく、編集の履歴は残らない",
+    "それぞれが Git リポジトリであり、フォークやクローンができる",
+    "1つの Gist には、ファイルを1つしか入れられない",
+    "作成した後でも、公開の gist を secret gist に変更できる"
+   ],
+   "answer": 1,
+   "explanation": "すべての Gist は Git リポジトリであり、フォークやクローンができ、編集の履歴も残る。複数のファイルを入れることもできる。公開の gist を、作成後に secret にすることはできない。なお、secret gist は編集して公開に変更できる。",
+   "topic": "Gist",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "README には概要だけを書いて、プロジェクトの使い方や設計の考え方などの、長めのドキュメントを置く場所を用意したい。リポジトリの機能として、適切なものはどれか。",
+   "choices": [
+    "Wiki",
+    "Releases",
+    "Issues",
+    "Gist"
+   ],
+   "answer": 0,
+   "explanation": "リポジトリには Wiki が用意されていて、README に収まらない、使い方や設計の考え方などの長めのドキュメントを置ける。既定では、書き込み権限を持つ人が編集できる。Releases はリリースの配布、Issues は作業の追跡、Gist はコードの断片の共有に使う。",
+   "topic": "WikiとGitHub Pages",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Pages で、ユーザーアカウントの個人サイトを公開する。ソースを置くリポジトリの名前として、適切なものはどれか。",
+   "choices": [
+    "<ユーザー名>",
+    "<ユーザー名>-pages",
+    "pages",
+    "<ユーザー名>.github.io"
+   ],
+   "answer": 3,
+   "explanation": "ユーザーサイトのソースは、<ユーザー名>.github.io という名前のリポジトリに置き、既定の URL は https://<ユーザー名>.github.io になる。ユーザー名と同名のリポジトリは、プロフィールの README を表示するためのものである。",
+   "topic": "WikiとGitHub Pages",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Projects で、作業項目を時間軸に沿ったタイムラインで表示して、計画を立てたい。選ぶレイアウトはどれか。",
+   "choices": [
+    "Table",
+    "Roadmap",
+    "Board",
+    "Pulse"
+   ],
+   "answer": 1,
+   "explanation": "Projects のレイアウトには、表形式の Table、カンバン形式の Board、タイムライン形式の Roadmap がある。時間軸に沿った計画には Roadmap を使う。Pulse はリポジトリの活動の概要を示す Insights の項目で、Projects のレイアウトではない。",
+   "topic": "Projectsとレイアウト",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Projects で、列（ステータス）ごとにカードを並べ、ドラッグしてカンバン形式で作業を管理したい。選ぶレイアウトはどれか。",
+   "choices": [
+    "Board",
+    "Table",
+    "Roadmap",
+    "Insights"
+   ],
+   "answer": 0,
+   "explanation": "Board は、ステータスなどの列ごとにカードを並べ、ドラッグで移動できるカンバン形式のレイアウトである。Table は高密度の表形式、Roadmap はタイムライン形式である。Insights は、プロジェクトのデータをグラフで表示する機能で、レイアウトではない。",
+   "topic": "Projectsとレイアウト",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Projects で、アイテムが追加されたり、状態が変わったりしたときに、フィールドの値を自動で設定したい。使う機能はどれか。",
+   "choices": [
+    "Issue のテンプレート",
+    "Projects のビルトインワークフロー（built-in workflows）",
+    "保存済み返信",
+    "リポジトリのブランチ保護ルール"
+   ],
+   "answer": 1,
+   "explanation": "Projects のビルトインワークフローでは、アイテムの追加や状態の変更をきっかけに、フィールドを自動で設定したり、条件に合うアイテムをアーカイブしたりできる。さらに高度な自動化には、GraphQL API や GitHub Actions を使う。Issue のテンプレートなどは、この目的の機能ではない。",
+   "topic": "Projectsのワークフローとインサイト",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "初めて貢献する人に向いた Issue を示すために付ける、既定のラベルはどれか。この Issue はリポジトリの contribute ページに表示される。",
+   "choices": [
+    "bug",
+    "enhancement",
+    "good first issue",
+    "duplicate"
+   ],
+   "answer": 2,
+   "explanation": "good first issue は、初めて貢献する人にとって取りかかりやすい Issue を示す既定のラベルで、このラベルの付いた Issue はリポジトリの contribute ページに表示される。bug は不具合、enhancement は新機能の要望、duplicate は重複を示すラベルである。",
+   "topic": "ラベルとマイルストーン",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "複数の Issue と Pull Request をリリースなどの目標にまとめ、期限に向けた進捗の割合を追跡したい。使う機能はどれか。",
+   "choices": [
+    "ラベル（Label）",
+    "担当者（Assignee）",
+    "Discussions のカテゴリ",
+    "マイルストーン（Milestone）"
+   ],
+   "answer": 3,
+   "explanation": "マイルストーンは、Issue と Pull Request をまとめて、期限と進捗（完了の割合）を追跡する機能である。ラベルは分類、担当者は責任者の指定、Discussions のカテゴリは議論の分類に使い、進捗の割合は示さない。",
+   "topic": "ラベルとマイルストーン",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリに「Sponsor」ボタンを表示して、支援を受けられるようにしたい。設定として、適切なものはどれか。",
+   "choices": [
+    ".github ディレクトリに FUNDING.yml を作成し、支援の受け先を記載する",
+    "リポジトリのルートに SPONSORS.md を作成し、支援の受け先を記載する",
+    ".github/ISSUE_TEMPLATE/config.yml に、支援の受け先を記載する",
+    "README.md の先頭に、Sponsor を示す専用のタグを記載する"
+   ],
+   "answer": 0,
+   "explanation": "Sponsor ボタンは、.github ディレクトリに FUNDING.yml を置き、GitHub Sponsors や外部の支援プラットフォームの情報を書くことで表示される。SPONSORS.md や config.yml、README のタグでは、ボタンは表示されない。",
+   "topic": "オープンソースとGitHub Sponsors",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  }
+ ]
+}
