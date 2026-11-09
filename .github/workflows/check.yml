@@ -30,6 +30,8 @@ jobs:
           done
       - name: テストを実行
         run: |
-          for i in $(seq 1 13); do
-            node "tests/run$i.js"
+          # tests/run*.js と tests/run*.mjs を、すべて実行する（1本でも失敗したら止まる）
+          for f in tests/run*.js tests/run*.mjs; do
+            echo "== $f"
+            node "$f"
           done
