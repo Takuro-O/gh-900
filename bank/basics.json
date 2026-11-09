@@ -1,0 +1,146 @@
+{
+ "field": "basics",
+ "updatedAt": "2026-11-09",
+ "questions": [
+  {
+   "q": "複数の開発者が同じソースコードを編集するプロジェクトで、誰がいつ何を変更したかを記録し、問題のある変更を以前の状態に戻せるようにしたい。この目的に最も適した仕組みはどれか。",
+   "choices": [
+    "継続的インテグレーション（CI）",
+    "バージョン管理システム（VCS）",
+    "パッケージレジストリ",
+    "Issue トラッカー"
+   ],
+   "answer": 1,
+   "explanation": "バージョン管理システムは、ファイルの変更履歴を記録し、変更者や時期の追跡、過去の状態への復元、複数人での並行作業を可能にする。Git はその代表例である。CI はビルドやテストの自動化、パッケージレジストリはパッケージの配布、Issue トラッカーは作業やバグの管理が目的で、変更履歴の記録や復元の仕組みではない。",
+   "topic": "バージョン管理の目的と利点",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Git と GitHub の関係についての説明として、適切なものはどれか。",
+   "choices": [
+    "Git は Git リポジトリをクラウドでホストするサービスで、GitHub はローカルで動くバージョン管理ツールである",
+    "Git と GitHub は同じソフトウェアで、利用する端末の OS によって呼び方が異なる",
+    "Git は GitHub のアカウントを持つ利用者だけが使え、コミットのたびに GitHub への接続が必要である",
+    "Git は分散型バージョン管理システムで、GitHub は Git リポジトリをホストし共同作業の機能を提供するサービスである"
+   ],
+   "answer": 3,
+   "explanation": "Git はローカルのマシンで動く分散型バージョン管理システムで、GitHub に接続しなくてもコミットなどの操作ができる。GitHub は Git リポジトリをクラウド上でホストし、Pull Request、Issue、GitHub Actions などの共同作業や自動化の機能を加えたプラットフォームである。",
+   "topic": "GitとGitHubの違い",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub の Organization について、適切な説明はどれか。",
+   "choices": [
+    "複数の人が共同でプロジェクトを進めるための共有アカウントで、メンバーは各自の個人アカウントでサインインして利用する",
+    "個人アカウントとは別に専用のユーザー名とパスワードを持ち、メンバーが共通の資格情報で直接サインインして利用する",
+    "すべてのメンバーが同じ権限を持ち、Owner や Member といったロールの区別を持たないアカウントである",
+    "Organization 内に作成したリポジトリは、常に公開リポジトリとなり、非公開にはできない"
+   ],
+   "answer": 0,
+   "explanation": "GitHub を使う人は常に個人アカウントでサインインし、Organization は複数の個人アカウントが共同作業するための共有アカウントである。Owner や Member などのロールやチームを使って、リポジトリへのアクセス権を管理できる。リポジトリは公開・非公開のどちらでも作成できる。",
+   "topic": "GitHubアカウントの種類",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "チームは main ブランチを常にデプロイ可能な状態に保ちながら、小さな変更を継続的に取り込みたい。GitHub Flow に沿った進め方はどれか。",
+   "choices": [
+    "開発用とリリース用の長期ブランチを常に並行して運用し、リリースのタイミングでだけ変更を main へ統合する",
+    "全員が main ブランチに直接コミットし、問題が見つかった場合にだけ、後から該当の変更を取り消して対応する",
+    "main から作業用ブランチを作成して変更をコミットし、Pull Request でレビューを受けてから main にマージする",
+    "リリースごとに専用のブランチを作り、すべての修正をそのブランチ上だけで完結させ、変更を main には戻さない"
+   ],
+   "answer": 2,
+   "explanation": "GitHub Flow は、main から短命のブランチを作成し、コミット、Pull Request の作成、レビューと議論、マージの順に進める軽量なワークフローである。長期の開発用ブランチとリリース用ブランチを使い分ける方式は、Git Flow など別のモデルにあたる。",
+   "topic": "GitHub Flow",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub 上の Markdown で、文中の語句を等幅フォントのインラインコードとして表示したい。書き方として適切なものはどれか。",
+   "choices": [
+    "語句の行頭に # を付ける",
+    "語句をバッククォート（`）で囲む",
+    "語句の行頭に > を付ける",
+    "語句をアスタリスク 2 つ（**）で囲む"
+   ],
+   "answer": 1,
+   "explanation": "Markdown では、バッククォートで囲んだ部分がインラインコードとして等幅で表示される。行頭の # は見出し、行頭の > は引用、** で囲むと太字になる。複数行のコードは、3 つのバッククォートで囲んでコードブロックにする。",
+   "topic": "Markdown",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "外出中にスマートフォンで、自分宛ての通知を整理し、Pull Request の内容を確認してコメントしたい。使用するツールとして適切なものはどれか。",
+   "choices": [
+    "GitHub Desktop",
+    "GitHub CLI",
+    "GitHub Pages",
+    "GitHub Mobile"
+   ],
+   "answer": 3,
+   "explanation": "GitHub Mobile は iOS と Android 向けのアプリで、通知の管理、Issue や Pull Request の確認・レビュー・コメントなどができる。GitHub Desktop はデスクトップ向けのアプリで、Git の操作をグラフィカルに行う。GitHub CLI はコマンドラインから GitHub を操作するツール、GitHub Pages は静的サイトを公開する機能である。",
+   "topic": "GitHub DesktopとGitHub Mobile",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "新しい貢献者に、Issue や Pull Request を作る前に守ってほしい手順や規約を案内したい。リポジトリに用意するファイルとして適切なものはどれか。",
+   "choices": [
+    "CONTRIBUTING.md",
+    "LICENSE",
+    ".gitignore",
+    "SECURITY.md"
+   ],
+   "answer": 0,
+   "explanation": "CONTRIBUTING.md は貢献の方法や規約を示すファイルで、Issue や Pull Request を作成する際に GitHub がそのリンクを案内する。LICENSE は利用条件、.gitignore は Git が追跡しないファイルの指定、SECURITY.md は脆弱性の報告方法を示すためのファイルである。",
+   "topic": "リポジトリの構成と主要ファイル",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "決まったディレクトリ構成とファイルを持つ雛形を、新しいプロジェクトの出発点として繰り返し使いたい。新しいリポジトリには、元のコミット履歴を引き継がせたくない。適切な方法はどれか。",
+   "choices": [
+    "元のリポジトリをフォークして、新しいプロジェクトとして使う",
+    "元のリポジトリをアーカイブして、そのまま複製として使う",
+    "元のリポジトリをテンプレートリポジトリに設定し、そこから新しいリポジトリを作成する",
+    "元のリポジトリをサブモジュールとして、新しいリポジトリに追加する"
+   ],
+   "answer": 2,
+   "explanation": "テンプレートリポジトリから作成した新しいリポジトリは、同じ構成とファイルを持ち、履歴は1つの初期コミットから始まる。フォークは親リポジトリの全コミット履歴を引き継ぐ。アーカイブは読み取り専用にする設定で複製ではなく、サブモジュールは別のリポジトリを参照として組み込む仕組みである。",
+   "topic": "リポジトリの作成とテンプレート",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request がマージされたあと、作業用ブランチを手動で削除せずに、自動で削除されるようにしたい。リポジトリの設定でどれを有効にするか。",
+   "choices": [
+    "Allow auto-merge",
+    "Allow squash merging",
+    "Always suggest updating pull request branches",
+    "Automatically delete head branches"
+   ],
+   "answer": 3,
+   "explanation": "「Automatically delete head branches」を有効にすると、Pull Request がマージされたあとに、そのヘッドブランチが自動的に削除される（General 設定の Pull Requests セクション）。Allow auto-merge は条件を満たした Pull Request を自動でマージする設定、Allow squash merging はスカッシュマージを許可する設定、Always suggest updating pull request branches はブランチの更新を促す設定で、ブランチを削除するものではない。",
+   "topic": "ブランチの作成と管理",
+   "volatile": true,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "公開リポジトリが過去2週間にどれだけ閲覧・クローンされ、どの参照元から訪問者が来たかを確認したい。Insights のどの項目を見るか。",
+   "choices": [
+    "Pulse",
+    "Traffic",
+    "Code frequency",
+    "Contributors"
+   ],
+   "answer": 1,
+   "explanation": "Traffic では、過去14日間の閲覧数・クローン数、参照元のサイト、人気のあるコンテンツを確認できる（プッシュ権限が必要）。Pulse は期間内のリポジトリの活動の概要、Code frequency は追加・削除された行数の推移、Contributors は貢献者ごとのコミット数などを示す。",
+   "topic": "リポジトリのインサイトとメトリクス",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  }
+ ]
+}
