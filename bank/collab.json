@@ -351,6 +351,356 @@
    "topic": "オープンソースとGitHub Sponsors",
    "volatile": false,
    "createdAt": "2026-11-09"
+  },
+  {
+   "q": "他の開発者の公開された活動を、自分のダッシュボードで追いかけたい。ユーザーに対して行う操作はどれか。",
+   "choices": [
+    "Watch に設定する",
+    "Follow する",
+    "Star を付ける",
+    "Fork する"
+   ],
+   "answer": 1,
+   "explanation": "ユーザーを Follow すると、そのユーザーの公開された活動が、自分のダッシュボードに表示される。Watch はリポジトリの通知の設定、Star はリポジトリのブックマーク、Fork はリポジトリのコピーの作成であり、ユーザーを追いかける操作ではない。",
+   "topic": "フォローとGitHub Marketplace",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "開発のワークフローを助けるツールやアプリを探して、リポジトリや Organization に導入したい。探す場所として、適切なものはどれか。",
+   "choices": [
+    "GitHub Gist",
+    "GitHub Discussions",
+    "GitHub Marketplace",
+    "GitHub Sponsors"
+   ],
+   "answer": 2,
+   "explanation": "GitHub Marketplace は、開発を支援するツールやアプリが掲載され、探して導入できる場所である。Gist はコードの断片の共有、Discussions は議論の場、Sponsors は開発者への支援の仕組みであり、ツールを探す場所ではない。",
+   "topic": "フォローとGitHub Marketplace",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Marketplace について、適切な説明はどれか。",
+   "choices": [
+    "開発を支援するアプリやアクションが掲載されており、無料のものも有料のものも探して導入できる",
+    "GitHub 社が開発したツールだけが掲載されており、すべて無料で導入できる",
+    "リポジトリのソースコードを、ほかのユーザーに販売するための専用の場である",
+    "Organization の内部だけに公開される、非公開のツールの置き場である"
+   ],
+   "answer": 0,
+   "explanation": "Marketplace には、開発者や企業が公開するアプリやアクションが掲載され、料金プランが設定されているものもある。掲載されるのは GitHub 社のツールだけではなく、ソースコードの販売や、Organization 内部だけの置き場を目的とした場でもない。",
+   "topic": "フォローとGitHub Marketplace",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "InnerSource の説明として、適切なものはどれか。",
+   "choices": [
+    "ソースコードを全世界に公開して、外部のコミュニティから広く貢献を募る手法である",
+    "社外の企業にソースコードの開発を委託して、成果物だけを納品してもらう手法である",
+    "オープンソースの開発の進め方を、組織の内部に取り入れて、組織内の誰もが貢献できるようにする手法である",
+    "ソースコードを管理者だけが閲覧・変更できるようにして、貢献を受け付けない手法である"
+   ],
+   "answer": 2,
+   "explanation": "InnerSource は、Issue や Pull Request による議論など、オープンソースの開発の進め方を、企業の内部で取り入れる手法で、コードは社内に留め、権限のある開発者が貢献できる。全世界への公開は、オープンソースにあたる。",
+   "topic": "InnerSource",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "InnerSource を取り入れる利点として、適切なものはどれか。",
+   "choices": [
+    "ソースコードが自動的に全世界へ公開され、外部の人にも無償で再利用してもらえる",
+    "Pull Request によるレビューが不要になり、変更をすぐに反映できる",
+    "リポジトリのアクセス権の管理が不要になり、全員が同じ権限で操作できる",
+    "組織内のほかのチームが既存のコードを見つけて再利用でき、重複した開発を減らせる"
+   ],
+   "answer": 3,
+   "explanation": "InnerSource では、組織内でコードが見える状態になるため、ほかのチームが再利用や改善に貢献しやすく、重複した開発を減らせる。コードの公開範囲は社内に留まり、レビューやアクセス権の管理が不要になるわけではない。",
+   "topic": "InnerSource",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "オープンソースと InnerSource の違いとして、適切なものはどれか。",
+   "choices": [
+    "オープンソースでは Pull Request を使うが、InnerSource では Pull Request を使わない",
+    "オープンソースは誰でもコードを閲覧し貢献できるが、InnerSource は組織内で権限を持つ開発者に限られる",
+    "オープンソースでは Git を使うが、InnerSource では Git ではなく専用のツールを使う",
+    "オープンソースと InnerSource は同じ意味で、公開範囲に違いはない"
+   ],
+   "answer": 1,
+   "explanation": "オープンソースはコードが公開され、誰でも閲覧・利用・貢献できるのに対し、InnerSource はコードを組織内に留め、権限のある開発者が貢献する。InnerSource でも、Issue や Pull Request などの、オープンソースと同じ進め方を使う。",
+   "topic": "InnerSource",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "書き込み権限を持たない他人の公開リポジトリに対して、修正を提案したい。最初に行う操作として、適切なものはどれか。",
+   "choices": [
+    "リポジトリを Archive する",
+    "リポジトリを clone して、元のリポジトリへ直接 push する",
+    "リポジトリを Fork する",
+    "リポジトリから、テンプレートを使って新しいリポジトリを作る"
+   ],
+   "answer": 2,
+   "explanation": "書き込み権限がない場合は、リポジトリを Fork して自分のアカウントにコピーを作り、そこで変更してから、元のリポジトリへ Pull Request を送る。clone しただけでは、元のリポジトリへ push できない。テンプレートからの作成では、元のリポジトリとのつながりが残らない。",
+   "topic": "フォークとテンプレートの使い分け",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "フォークの説明として、適切なものはどれか。",
+   "choices": [
+    "元のリポジトリの中に作られる別のブランチで、設定や権限も元のリポジトリと共有するものである",
+    "元のリポジトリを自分のマシンに複製したもので、GitHub 上には新しいリポジトリが作られないものである",
+    "元のリポジトリを読み取り専用で参照するためのリンクで、自分では変更を加えられないものである",
+    "元のリポジトリとのつながりを保ったまま、自分のアカウントや Organization に作られる、独自の設定とブランチを持つ別のリポジトリである"
+   ],
+   "answer": 3,
+   "explanation": "フォークは、元のリポジトリ（upstream）とつながりを保った別のリポジトリで、独自のブランチ、Issue、設定を持つ。ブランチは1つのリポジトリの一部である。ローカルへの複製は clone で、フォークは GitHub 上に作られる。",
+   "topic": "フォークとテンプレートの使い分け",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "テンプレートリポジトリではなく、フォークを使うのが適切な場面はどれか。",
+   "choices": [
+    "他の人のリポジトリに対して、Pull Request で変更を提案する",
+    "決まったディレクトリ構成を持つプロジェクトを、毎回新しく始める",
+    "組織の標準ファイルを備えた新しいリポジトリを、メンバーが量産する",
+    "元のコミット履歴を引き継がない、新しいリポジトリを作る"
+   ],
+   "answer": 0,
+   "explanation": "フォークは、元のリポジトリとつながりを保って変更し、Pull Request で貢献するために使う。決まった構成のプロジェクトを繰り返し作ったり、履歴を引き継がない新しいリポジトリを作ったりするには、テンプレートリポジトリが適している。",
+   "topic": "フォークとテンプレートの使い分け",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Sponsors の説明として、適切なものはどれか。",
+   "choices": [
+    "GitHub の有料プランの利用権を、ほかのユーザーへ譲渡するための仕組みである",
+    "リポジトリのソースコードを、ほかのユーザーが購入できるようにする仕組みである",
+    "オープンソースを支える開発者や組織に、金銭的な支援ができる仕組みである",
+    "Marketplace のアプリの利用料を、Organization へ請求する仕組みである"
+   ],
+   "answer": 2,
+   "explanation": "GitHub Sponsors は、オープンソースに貢献する開発者や組織を、個人や Organization が金銭的に支援できる仕組みである。プランの譲渡、ソースコードの販売、Marketplace の課金とは異なる。",
+   "topic": "オープンソースとGitHub Sponsors",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Sponsors で、支援する側（sponsor）になれるのは誰か。",
+   "choices": [
+    "個人アカウントだけが支援でき、Organization は支援できない",
+    "Organization だけが支援でき、個人アカウントは支援できない",
+    "支援を受ける側と同じ Organization のメンバーに限られる",
+    "個人アカウントでも Organization でも、一回払いまたは月額で支援できる"
+   ],
+   "answer": 3,
+   "explanation": "個人アカウントでも Organization でも、対象を選んで一回払いまたは月額で支援できる。支援を受ける側は、対応している地域に住んでいる、または活動している必要があるが、支援する側は地域を問わない。",
+   "topic": "オープンソースとGitHub Sponsors",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub Projects で、アイテムの状態ごとの件数などをグラフにして、進捗を可視化したい。使う機能はどれか。",
+   "choices": [
+    "Wiki",
+    "保存済み返信",
+    "Insights（グラフ）",
+    "Dependabot"
+   ],
+   "answer": 2,
+   "explanation": "Projects の Insights では、プロジェクトのアイテムのデータをもとに、グラフを作成して進捗を可視化できる。Wiki はドキュメント、保存済み返信はコメントの再利用、Dependabot は依存関係の更新の自動化であり、グラフの作成とは関係がない。",
+   "topic": "Projectsのワークフローとインサイト",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request を作成するときに、あらかじめ本文に雛形を表示させたい。ファイルとその場所として、適切なものはどれか。",
+   "choices": [
+    ".github/pull_request_template.md",
+    "README.md の先頭に書いた、Pull Request 用の雛形",
+    "CODEOWNERS ファイルに書いた、本文の雛形",
+    "Wiki の「Pull Request」ページに書いた雛形"
+   ],
+   "answer": 0,
+   "explanation": "Pull Request のテンプレートは、リポジトリのルート、docs ディレクトリ、または .github ディレクトリに pull_request_template.md を置くことで、作成画面の本文に表示される。README や CODEOWNERS、Wiki に書いても、テンプレートとしては使われない。",
+   "topic": "テンプレートとフィルター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "検索バーで、オープンな Issue のうち、ユーザー octocat が担当者になっているものだけに絞りたい。検索条件として、適切なものはどれか。",
+   "choices": [
+    "is:issue is:open author:octocat",
+    "is:issue is:open assignee:octocat",
+    "is:issue is:closed assignee:octocat",
+    "is:pr is:open assignee:octocat"
+   ],
+   "answer": 1,
+   "explanation": "is:issue で Issue に、is:open でオープンなものに、assignee: で担当者に絞り込める。author: は作成者、is:closed はクローズ済み、is:pr は Pull Request での絞り込みになるため、条件に合わない。",
+   "topic": "テンプレートとフィルター",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue や Pull Request の担当者として割り当てられる人について、適切な説明はどれか。",
+   "choices": [
+    "Organization の Owner のロールを持つユーザーだけが、担当者に割り当てられる",
+    "リポジトリに Star を付けたことのあるユーザーだけが、担当者に割り当てられる",
+    "Gist を作成したことのあるユーザーだけが、担当者に割り当てられる",
+    "リポジトリの書き込み権限を持つユーザーや、その Issue にコメントしたユーザーなどを割り当てられる"
+   ],
+   "answer": 3,
+   "explanation": "担当者には、自分自身、その Issue や Pull Request にコメントした人、リポジトリの書き込み権限を持つ人などを割り当てられる。Owner や Star、Gist の有無は、担当者になれるかどうかとは関係がない。",
+   "topic": "担当者と保存済み返信",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue の担当者の設定について、適切な説明はどれか。",
+   "choices": [
+    "1つの Issue や Pull Request に、複数の担当者を設定できる",
+    "担当者は、1つの Issue につき1人だけしか設定できず、複数人は設定できない",
+    "担当者は、Issue の作成者以外のユーザーにしか設定できない",
+    "担当者を設定できるのは、リポジトリの Owner のロールを持つユーザーだけである"
+   ],
+   "answer": 0,
+   "explanation": "1つの Issue や Pull Request には、複数の担当者を設定できる（上限はある）。書き込み権限があれば、担当者を割り当てられる。",
+   "topic": "担当者と保存済み返信",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "GitHub の通知を受け取る場所として、適切な組み合わせはどれか。",
+   "choices": [
+    "Web の通知の受信トレイだけで、ほかの場所では受け取れない",
+    "メールだけで、Web や GitHub Mobile では受け取れない",
+    "Web の通知の受信トレイ、GitHub Mobile の受信トレイ、メール",
+    "SMS と電話だけで、Web やメールでは受け取れない"
+   ],
+   "answer": 2,
+   "explanation": "通知は、GitHub の Web の通知の受信トレイ、GitHub Mobile の受信トレイ（Web と同期する）、確認済みのメールアドレス宛てのメールで受け取れる。設定で、どこに届けるかを選べる。",
+   "topic": "通知",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "リポジトリで Discussions を使えるようにするために、必要なことはどれか。",
+   "choices": [
+    "管理者が、リポジトリまたは Organization で Discussions を有効にする",
+    "リポジトリで Projects を有効にすると、自動的に Discussions も使えるようになる",
+    "リポジトリの Wiki を無効にすると、自動的に Discussions が使えるようになる",
+    "すべてのリポジトリで常に有効になっていて、有効化の設定は不要である"
+   ],
+   "answer": 0,
+   "explanation": "Discussions は、管理者がリポジトリまたは Organization で有効にしたあと、アクセス権を持つ人が議論を作成・参加できる。Projects や Wiki の設定とは独立している。",
+   "topic": "Discussions",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue のコメントに「#42」と書いたときの動作として、適切なものはどれか。",
+   "choices": [
+    "同じ Issue の42番目のコメントへのリンクが、自動的に作られる",
+    "「42」という名前のラベルが、その Issue に自動的に付く",
+    "「#42」の文字が、そのまま見出しとして大きく表示される",
+    "同じリポジトリの Issue または Pull Request #42 へのリンクになる"
+   ],
+   "answer": 3,
+   "explanation": "Issue や Pull Request の番号を # に続けて書くと、同じリポジトリの該当する Issue や Pull Request への参照リンクになる。コメントの番号やラベルとは関係がない。",
+   "topic": "Issue",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request のレビューで、承認も変更の要求もせず、一般的なフィードバックだけを残したい。選ぶレビューの種類はどれか。",
+   "choices": [
+    "Comment",
+    "Approve",
+    "Request changes",
+    "Merge"
+   ],
+   "answer": 0,
+   "explanation": "Comment は、承認も変更の要求もせずに、一般的なフィードバックを残すレビューである。Approve は変更を承認する、Request changes はマージの前に対応してほしい点を指摘する選択肢である。Merge はレビューの種類ではなく、マージの操作である。",
+   "topic": "Pull Request",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Pull Request のレビューで、マージの前に修正してほしい点を指摘したい。選ぶレビューの種類はどれか。",
+   "choices": [
+    "Approve",
+    "Request changes",
+    "Comment",
+    "Draft"
+   ],
+   "answer": 1,
+   "explanation": "Request changes は、マージの前に作成者が対応すべき点を指摘するレビューである。Approve は変更を承認する、Comment は承認も要求もしないフィードバックである。Draft は Pull Request の状態で、レビューの種類ではない。",
+   "topic": "Pull Request",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Issue や Pull Request にラベルを付けたり外したりできる、最小のリポジトリのロールはどれか。",
+   "choices": [
+    "Read",
+    "Write",
+    "Triage",
+    "Maintain"
+   ],
+   "answer": 2,
+   "explanation": "Triage は、Issue や Pull Request へのラベルの適用・解除など、整理に関する操作ができる最小のロールである。Read ではラベルを付けられない。Write や Maintain も可能だが、最小のロールではない。",
+   "topic": "ラベルとマイルストーン",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "公開リポジトリの Wiki を編集できる人について、既定の動作として適切なものはどれか。",
+   "choices": [
+    "GitHub のアカウントを持つ人なら、誰でも編集できる",
+    "リポジトリの Owner だけが編集できる",
+    "リポジトリの書き込み権限を持つ人が編集できる",
+    "リポジトリに Star を付けた人だけが編集できる"
+   ],
+   "answer": 2,
+   "explanation": "既定では、リポジトリの書き込み権限を持つ人だけが Wiki を変更できる。公開リポジトリでは、リポジトリのオーナーの設定で、GitHub 上の誰でも編集できるようにすることもできる。",
+   "topic": "WikiとGitHub Pages",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "小さなコードの例を、誰でも検索して見つけられる形で共有したい。適切な方法はどれか。",
+   "choices": [
+    "secret gist として作成する",
+    "非公開のリポジトリを作成する",
+    "Issue のコメントに貼り付ける",
+    "公開の gist として作成する"
+   ],
+   "answer": 3,
+   "explanation": "公開の gist は Discover に表示され、検索で見つけられる。secret gist は検索や Discover に表示されず、非公開のリポジトリは権限のある人しか見られない。Issue のコメントは、特定のリポジトリの中の議論であり、独立した共有には向かない。",
+   "topic": "Gist",
+   "volatile": false,
+   "createdAt": "2026-11-09"
+  },
+  {
+   "q": "Organization で、レイアウトやフィールドを設定済みのプロジェクトを、ほかのメンバーが繰り返し使えるようにしたい。適切な方法はどれか。",
+   "choices": [
+    "プロジェクトのテンプレートを作成して共有する",
+    "リポジトリをテンプレートリポジトリに設定する",
+    "Issue のテンプレートを作成する",
+    "Gist にプロジェクトの設定を保存する"
+   ],
+   "answer": 0,
+   "explanation": "Organization は、設定済みのプロジェクトをテンプレートとして作成し、メンバーと共有できる。テンプレートリポジトリや Issue のテンプレートは、プロジェクト（Projects）の設定を共有する機能ではない。",
+   "topic": "Projectsとレイアウト",
+   "volatile": true,
+   "createdAt": "2026-11-09"
   }
  ]
 }
