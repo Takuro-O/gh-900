@@ -7,7 +7,7 @@ const fakeFetch=async()=>{fetches++;
  if(mode==='daily')return{ok:false,status:429,json:async()=>({error:{status:'RESOURCE_EXHAUSTED',details:[{violations:[{quotaId:'GenerateRequestsPerDayPerProjectPerModel-FreeTier'}]}]}})};
  if(mode==='minute')return{ok:false,status:429,json:async()=>({error:{status:'RESOURCE_EXHAUSTED',details:[{violations:[{quotaId:'GenerateRequestsPerMinutePerProjectPerModel-FreeTier'}]}]}})};
  return{ok:false,status:500,json:async()=>({})};};
-function boot(ls={}){fetches=0;ls={bizcareer_gemini_key:'k',...ls};
+function boot(ls={}){fetches=0;ls={gh900_gemini_key:'k',...ls};
  return new JSDOM(html,{runScripts:'dangerously',url:'https://x.test/',pretendToBeVisual:true,beforeParse(w){for(const[k,v]of Object.entries(ls))w.localStorage.setItem(k,v);w.fetch=(u,o)=>String(u).includes("bank/")?Promise.resolve({ok:false,status:404,json:async()=>({})}):fakeFetch(u,o);w.matchMedia=()=>({matches:false,addEventListener(){},addListener(){}});}}).window;}
 const toasts=d=>[...d.querySelectorAll('[role=alert]')].map(e=>e.textContent).join('|');
 const day=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles'}).format(new Date());

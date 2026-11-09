@@ -26,7 +26,7 @@ async function runBatch({ html, apiKey, fetchImpl, field, count, existing, timeo
   const dom = new JSDOM(html, {
     runScripts: 'dangerously', url: 'https://bank.local/', pretendToBeVisual: true,
     beforeParse(w) {
-      w.localStorage.setItem('bizcareer_gemini_key', apiKey); // APIキーだけはビジキャリと共有（キー名は同じ）
+      w.localStorage.setItem('gh900_gemini_key', apiKey); // アプリ本体と同じキー名（GH-900 専用）
       w.localStorage.setItem('gh900_live', '1');
       w.localStorage.setItem('gh900_verify', '1');
       w.localStorage.setItem('gh900_quiz_v1', JSON.stringify(seedHistory(field, existing)));

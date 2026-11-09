@@ -41,7 +41,7 @@ async function start(w,{field='basics',count=10,source,live}={}){const d=w.docum
  ok(bankFetches===0&&prog(w)===null&&/APIキー/.test(toasts(w.document)),'source forces live generation: '+toasts(w.document));
  ok(w.document.getElementById('advanced').open,'details opened to show key field');
  // AI生成トグル → バンクを使わない
- w=boot({bizcareer_gemini_key:'k'});await wait(100);await start(w,{live:true});
+ w=boot({gh900_gemini_key:'k'});await wait(100);await start(w,{live:true});
  ok(apiCalls>=1&&bankFetches===0,'live toggle bypasses bank (api calls '+apiCalls+')');
  ok(w.localStorage.getItem('gh900_live')==='1','live preference persisted');
  // バンクが無いドメイン → 生成にフォールバック（キーなし→案内）

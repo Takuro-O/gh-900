@@ -16,7 +16,7 @@ function boot(ls){return new JSDOM(html,{runScripts:'dangerously',url:'https://x
  beforeParse(w){for(const[k,v]of Object.entries(ls))w.localStorage.setItem(k,v);w.fetch=fakeFetch;w.scrollTo=()=>{};w.Element.prototype.scrollIntoView=()=>{};w.matchMedia=()=>({matches:false,addEventListener(){},addListener(){}});}}).window;}
 (async()=>{
   const hist={history:[rec('a','basics','基礎の既存の正解ABC'),rec('b','collab','コラボの既存の正解XYZ')],totalAnswered:0,totalCorrect:0};
-  const w=boot({bizcareer_gemini_key:'k',gh900_quiz_v1:JSON.stringify(hist)});await wait(200);const d=w.document;
+  const w=boot({gh900_gemini_key:'k',gh900_quiz_v1:JSON.stringify(hist)});await wait(200);const d=w.document;
   w.openConfig('basics');w.selectCount(5);d.getElementById('start-btn').click();await wait(400);
   ok(sent.includes('【すでにある問題の正解】')&&sent.includes('基礎の既存の正解ABC'),'prompt lists same-domain existing answers');
   ok(!sent.includes('コラボの既存の正解XYZ'),'prompt excludes other-domain answers');

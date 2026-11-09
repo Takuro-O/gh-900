@@ -12,7 +12,7 @@ function boot(ls,withFetch){return new JSDOM(html,{runScripts:'dangerously',url:
  beforeParse(w){for(const[k,v]of Object.entries(ls))w.localStorage.setItem(k,v);w.Element.prototype.scrollIntoView=()=>{};w.matchMedia=()=>({matches:false});if(withFetch)w.fetch=(u,o)=>String(u).includes("bank/")?Promise.resolve({ok:false,status:404,json:async()=>({})}):fakeFetch(u,o);}}).window;}
 (async()=>{
  // ── E2E: 生成 → 正規化 → 履歴保存
- let w=boot({bizcareer_gemini_key:'k'},true);await wait(200);let d=w.document,$=s=>d.querySelector(s);
+ let w=boot({gh900_gemini_key:'k'},true);await wait(200);let d=w.document,$=s=>d.querySelector(s);
  w.openConfig('basics'); w.selectCount(5); $('#start-btn').click(); await wait(300);
  ok($('#page-quiz').classList.contains('active'),'quiz started with mocked API');
  ok(sentPrompt.includes('推奨テーマから最も近いものを1つ')&&sentPrompt.includes('バージョン管理の目的と利点、GitとGitHubの違い')&&sentPrompt.includes('GitHubアカウントの種類、OrganizationとEnterprise'),'prompt contains topic vocabulary of the field');

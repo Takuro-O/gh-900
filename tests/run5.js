@@ -14,7 +14,7 @@ const fakeFetch=async(url,opts)=>{const body=JSON.parse(opts.body);const pr=body
  const next=genQueue.shift();if(next==='500'||!next)return{ok:false,status:500,json:async()=>({})};return resp({questions:next});};
 const rec=(id,field,qs)=>({id,date:new Date().toISOString(),field,fieldName:'Git・GitHub の基礎とリポジトリ',fieldIcon:'👥',count:qs.length,correct:qs.filter(q=>q.isRight).length,questions:qs});
 const hq=(topic,isRight,id)=>({...mkQ(id,topic),userAnswer:0,isRight});
-function boot(hist){calls=[];const ls={bizcareer_gemini_key:'k'};if(hist)ls.gh900_quiz_v1=JSON.stringify({history:hist,totalAnswered:0,totalCorrect:0});
+function boot(hist){calls=[];const ls={gh900_gemini_key:'k'};if(hist)ls.gh900_quiz_v1=JSON.stringify({history:hist,totalAnswered:0,totalCorrect:0});
  return new JSDOM(html,{runScripts:'dangerously',url:'https://x.test/',pretendToBeVisual:true,beforeParse(w){for(const[k,v]of Object.entries(ls))w.localStorage.setItem(k,v);w.Element.prototype.scrollIntoView=()=>{};w.matchMedia=()=>({matches:false});w.fetch=(u,o)=>String(u).includes("bank/")?Promise.resolve({ok:false,status:404,json:async()=>({})}):fakeFetch(u,o);}}).window;}
 async function start(w,{count=5,focus,source}={}){const d=w.document;w.openConfig('basics');w.selectCount(count);if(source){const t=d.getElementById('source-input');t.value=source;t.dispatchEvent(new w.Event('input'));}
  if(focus)w.selectFocus(focus);d.getElementById('start-btn').click();await wait(500);}
